@@ -24,55 +24,57 @@
 		<h1>Flash Cards : Web Application</h1>
 		<p class="proj_summery"><i>Submitted as a part of Modern Application Development Course at IIT Madras</i></p>
 		<p class="keywords"><i>Keywords: </i>
-		<span class="kw">IIT Madras</span>&ensp;
-        <span class="kw">Modern Application</span>&ensp;
-		<span class="kw">Web App</span>&ensp;
-		<span class="kw">Development</span>&ensp;
-		<span class="kw">Python</span>&ensp;
-		<span class="kw">Flask</span>&ensp;
-        <span class="kw">Vue</span>&ensp;
-        <span class="kw">Celery</span>&ensp;
-        <span class="kw">Redis</span>&ensp;
-		<span class="kw">SQLite</span>&ensp;
-        <span class="kw">Swagger</span>&ensp;
-        <span class="kw">API</span>&ensp;
-        <span class="kw">Insomnia</span>
-		</p>	
+			<span class="kw">IIT Madras</span>&ensp;
+			<span class="kw">Modern Application</span>&ensp;
+			<span class="kw">Web App</span>&ensp;
+			<span class="kw">Development</span>&ensp;
+			<span class="kw">Python</span>&ensp;
+			<span class="kw">Flask</span>&ensp;
+			<span class="kw">Vue</span>&ensp;
+			<span class="kw">Celery</span>&ensp;
+			<span class="kw">Redis</span>&ensp;
+			<span class="kw">SQLite</span>&ensp;
+			<span class="kw">Swagger</span>&ensp;
+			<span class="kw">API</span>&ensp;
+			<span class="kw">Insomnia</span>
+		</p>
 		</br>
 		<p class="normal_text"><i>[Click on any image to open it in full size.]</i></p>
 	</article>
-	
+
 	<!-- <p class="normal_text"></p> -->
-	
-	
-	
+
+
+
 	<!-- Project Content: Introduction, Problem, Solution, Goals, Steps -->
 	<section>
 		<h2>Introduction</h2>
-		
-		<p class="normal_text">The objective for this project is to create a flashcards web app with following features.</p>
-		
+
+		<p class="normal_text">The objective for this project is to create a flashcards web app with following features.
+		</p>
+
 		<p><b>Features:</b></p>
 		<ol>
 			<li>Login, register page for user</li>
-            <li>Dashboard with list of decks, last reviewed deck</li>
-            <li>Time of last review, score on deck</li>
-            <li>After selecting a deck for practice, present cards one after other</li>
-            <li>Allow user to select difficult of each card</li>
-            <li>Update last reviewed time and score, and overall deck score</li>
-            <li>Options to create a new deck, edit, delete deck</li>
-            <li>Add cards, edit, delete cards</li>
-            <li>Export/Import decks</li>
-            <li>APIs for interaction with decks</li>
+			<li>Dashboard with list of decks, last reviewed deck</li>
+			<li>Time of last review, score on deck</li>
+			<li>After selecting a deck for practice, present cards one after other</li>
+			<li>Allow user to select difficult of each card</li>
+			<li>Update last reviewed time and score, and overall deck score</li>
+			<li>Options to create a new deck, edit, delete deck</li>
+			<li>Add cards, edit, delete cards</li>
+			<li>Export/Import decks</li>
+			<li>APIs for interaction with decks</li>
 		</ol>
 	</section>
-	
+
 	<!-- Project Content -->
 	<section>
 		<h2>Files Structure</h2>
-		
-		<p class="normal_text">The files structure is shown as below. It explains how files are connected to each other.</p>
-		
+
+		<p class="normal_text">The files structure is shown as below. It explains how files are connected to each other.
+		</p>
+
 		<!-- Project Images -->
 		<figure class="singleImg">
 			<figcaption id="img-caption">
@@ -83,15 +85,21 @@
 			</a>
 		</figure>
 	</section>
-	
-	
+
+
 	<section>
 		<h2>Files Tree Diagram</h2>
-		
-		<p class="normal_text">This app is built in two iterations. In first iteration, a simple flashcards web app was built with using just <code class="code_kw">Python</code> and <code class="code_kw">Flask</code>. It had extra features like import/export a deck of cards and token based authentication. In next iteration, the same app was modified as a <code class="code_kw">SPA</code> with <code class="code_kw">Vue.js</code>, along with extra features like caching using <code class="code_kw">Redis</code>, background async jobs with <code class="code_kw">Celery</code>, report generation with <code class="code_kw">weasyprint</code>, and scheduled email notifications.</p>
-		
+
+		<p class="normal_text">This app is built in two iterations. In first iteration, a simple flashcards web app was
+			built with using just <code class="code_kw">Python</code> and <code class="code_kw">Flask</code>. It had
+			extra features like import/export a deck of cards and token based authentication. In next iteration, the
+			same app was modified as a <code class="code_kw">SPA</code> with <code class="code_kw">Vue.js</code>, along
+			with extra features like caching using <code class="code_kw">Redis</code>, background async jobs with <code
+				class="code_kw">Celery</code>, report generation with <code class="code_kw">weasyprint</code>, and
+			scheduled email notifications.</p>
+
 		<p class="normal_text">The files tree diagram for the app is shown below.</p>
-		
+
 		<!-- Project Images -->
 		<figure class="singleImg">
 			<figcaption id="img-caption">
@@ -102,197 +110,211 @@
 			</a>
 		</figure>
 	</section>
-	
-	
+
+
 	<section>
 		<h2>Web Page Design</h2>
-		
-		<p class="normal_text">A wireframe is a schematic that can be used to determine the app's structure. It consists of a number of screens arranged in the order in which they will be displayed to the user, as well as the material that will be displayed on each screen. It's also useful for programming. Based on the wireframes, the webpages were designed and developed with <code class="code_kw">HTML</code>, <code class="code_kw">CSS</code>, <code class="code_kw">JS</code>, and <code class="code_kw">Bootstrap</code></p>
+
+		<p class="normal_text">A wireframe is a schematic that can be used to determine the app's structure. It consists
+			of a number of screens arranged in the order in which they will be displayed to the user, as well as the
+			material that will be displayed on each screen. It's also useful for programming. Based on the wireframes,
+			the webpages were designed and developed with <code class="code_kw">HTML</code>, <code
+				class="code_kw">CSS</code>, <code class="code_kw">JS</code>, and <code class="code_kw">Bootstrap</code>
+		</p>
 		<p class="normal_text">The web pages are shown below.</p>
-		
+
 		<!-- Project Images -->
 		<div class="row">
 			<div class="column">
 				<figure>
 					<figcaption id="img-caption">
-					[Fig] Login
-				</figcaption>
-				<a href="login.png" target="_blank">
-					<img src="login.png" alt="Login" style="width:100%">
-				</a>
+						[Fig] Login
+					</figcaption>
+					<a href="login.png" target="_blank">
+						<img src="login.png" alt="Login" style="width:100%">
+					</a>
 				</figure>
 			</div>
-			
+
 			<div class="column">
 				<figure>
 					<figcaption id="img-caption">
-					[Fig] Sign Up
-				</figcaption>
-				<a href="signup.png" target="_blank">
-					<img src="signup.png" alt="Sign Up" style="width:100%">
-				</a>
-				</figure>
-			</div>
-		</div>
-        
-        <div class="row">
-			<div class="column">
-				<figure>
-					<figcaption id="img-caption">
-					[Fig] Dashboard
-				</figcaption>
-				<a href="dashboard.png" target="_blank">
-					<img src="dashboard.png" alt="Dashboard" style="width:100%">
-				</a>
-				</figure>
-			</div>
-			
-			<div class="column">
-				<figure>
-					<figcaption id="img-caption">
-					[Fig] Import Deck
-				</figcaption>
-				<a href="import.png" target="_blank">
-					<img src="import.png" alt="Import Deck" style="width:100%">
-				</a>
+						[Fig] Sign Up
+					</figcaption>
+					<a href="signup.png" target="_blank">
+						<img src="signup.png" alt="Sign Up" style="width:100%">
+					</a>
 				</figure>
 			</div>
 		</div>
-        
-        <div class="row">
+
+		<div class="row">
 			<div class="column">
 				<figure>
 					<figcaption id="img-caption">
-					[Fig] Add Card
-				</figcaption>
-				<a href="addcard.png" target="_blank">
-					<img src="addcard.png" alt="Add Card" style="width:100%">
-				</a>
+						[Fig] Dashboard
+					</figcaption>
+					<a href="dashboard.png" target="_blank">
+						<img src="dashboard.png" alt="Dashboard" style="width:100%">
+					</a>
 				</figure>
 			</div>
-			
+
 			<div class="column">
 				<figure>
 					<figcaption id="img-caption">
-					[Fig] Edit Card
-				</figcaption>
-				<a href="editcard.png" target="_blank">
-					<img src="editcard.png" alt="Edit Card" style="width:100%">
-				</a>
-				</figure>
-			</div>
-		</div>
-        
-        <div class="row">
-			<div class="column">
-				<figure>
-					<figcaption id="img-caption">
-					[Fig] Add Deck
-				</figcaption>
-				<a href="adddeck.png" target="_blank">
-					<img src="adddeck.png" alt="Add Deck" style="width:100%">
-				</a>
-				</figure>
-			</div>
-			
-			<div class="column">
-				<figure>
-					<figcaption id="img-caption">
-					[Fig] Edit Deck
-				</figcaption>
-				<a href="editdeck.png" target="_blank">
-					<img src="editdeck.png" alt="Edit Deck" style="width:100%">
-				</a>
+						[Fig] Import Deck
+					</figcaption>
+					<a href="import.png" target="_blank">
+						<img src="import.png" alt="Import Deck" style="width:100%">
+					</a>
 				</figure>
 			</div>
 		</div>
-        
-        <div class="row">
+
+		<div class="row">
 			<div class="column">
 				<figure>
 					<figcaption id="img-caption">
-					[Fig] Review Card Front Side
-				</figcaption>
-				<a href="front.png" target="_blank">
-					<img src="front.png" alt="Review Card Front Side" style="width:100%">
-				</a>
+						[Fig] Add Card
+					</figcaption>
+					<a href="addcard.png" target="_blank">
+						<img src="addcard.png" alt="Add Card" style="width:100%">
+					</a>
 				</figure>
 			</div>
-			
+
 			<div class="column">
 				<figure>
 					<figcaption id="img-caption">
-					[Fig] Review Card Back Side
-				</figcaption>
-				<a href="back.png" target="_blank">
-					<img src="back.png" alt="Review Card Back Side" style="width:100%">
-				</a>
+						[Fig] Edit Card
+					</figcaption>
+					<a href="editcard.png" target="_blank">
+						<img src="editcard.png" alt="Edit Card" style="width:100%">
+					</a>
+				</figure>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="column">
+				<figure>
+					<figcaption id="img-caption">
+						[Fig] Add Deck
+					</figcaption>
+					<a href="adddeck.png" target="_blank">
+						<img src="adddeck.png" alt="Add Deck" style="width:100%">
+					</a>
+				</figure>
+			</div>
+
+			<div class="column">
+				<figure>
+					<figcaption id="img-caption">
+						[Fig] Edit Deck
+					</figcaption>
+					<a href="editdeck.png" target="_blank">
+						<img src="editdeck.png" alt="Edit Deck" style="width:100%">
+					</a>
+				</figure>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="column">
+				<figure>
+					<figcaption id="img-caption">
+						[Fig] Review Card Front Side
+					</figcaption>
+					<a href="front.png" target="_blank">
+						<img src="front.png" alt="Review Card Front Side" style="width:100%">
+					</a>
+				</figure>
+			</div>
+
+			<div class="column">
+				<figure>
+					<figcaption id="img-caption">
+						[Fig] Review Card Back Side
+					</figcaption>
+					<a href="back.png" target="_blank">
+						<img src="back.png" alt="Review Card Back Side" style="width:100%">
+					</a>
 				</figure>
 			</div>
 		</div>
 	</section>
-	
+
 	<section>
 		<h2>Presentation and Video Demo</h2>
-		
-		<p class="normal_text">After building all required screens and programming related functions final app has been ready. </p>
-        
-        <p class="normal_text">The video below is the project presentation for the first iteration of the app. (It was submitted to IIT Madras as a part of MAD-I Course.)</p> 
-		
+
+		<p class="normal_text">After building all required screens and programming related functions final app has been
+			ready. </p>
+
+		<p class="normal_text">The video below is the project presentation for the first iteration of the app. (It was
+			submitted to IIT Madras as a part of MAD-I Course.)</p>
+
 		<!-- Project Youtube Video -->
 		<div class="youtubeVideo">
 			<center>
-				<iframe width="560" height="349" src="https://youtube.com/embed/6rKc4xtH5mM" frameborder="0" allowfullscreen></iframe>
+				<iframe width="560" height="349" src="https://youtube.com/embed/6rKc4xtH5mM" frameborder="0"
+					allowfullscreen></iframe>
 			</center>
 		</div>
-        
-        <p class="normal_text">The video below is the project presentation for the second iteration of the app. (It was submitted to IIT Madras as a part of MAD-II Course.)</p> 
-		
+
+		<p class="normal_text">The video below is the project presentation for the second iteration of the app. (It was
+			submitted to IIT Madras as a part of MAD-II Course.)</p>
+
 		<!-- Project Youtube Video -->
 		<div class="youtubeVideo">
 			<center>
-				<iframe width="560" height="349" src="https://youtube.com/embed/4tgK2ExSoSw" frameborder="0" allowfullscreen></iframe>
+				<iframe width="560" height="349" src="https://youtube.com/embed/4tgK2ExSoSw" frameborder="0"
+					allowfullscreen></iframe>
 			</center>
 		</div>
-        
-        <p class="normal_text">The video below is the live demo of the app.</p> 
-		
+
+		<p class="normal_text">The video below is the live demo of the app.</p>
+
 		<!-- Project Youtube Video -->
 		<div class="youtubeVideo">
 			<center>
-				<iframe width="560" height="349" src="https://youtube.com/embed/zonUVpFh4zE" frameborder="0" allowfullscreen></iframe>
+				<iframe width="560" height="349" src="https://youtube.com/embed/zonUVpFh4zE" frameborder="0"
+					allowfullscreen></iframe>
 			</center>
 		</div>
 	</section>
-	
-	
+
+
 	<!-- Project Resources -->
 	<section>
 		<h2>Resources</h2>
-        <p class="normal_text">All the relevent files and documents are available in the Github repository. Prefix <code class="code_kw">v1</code> means first iteration and <code class="code_kw">v2</code> means second iteration.</p>
+		<p class="normal_text">All the relevent files and documents are available in the Github repository. Prefix <code
+				class="code_kw">v1</code> means first iteration and <code class="code_kw">v2</code> means second
+			iteration.</p>
 		<p class="normal_text">
-		Github Project Repository:
-			<a href="https://github.com/Supe-Tushar/IITM-FlashCards-Web-App-MAD-Project" target="_blank">Click Here !!
+			Github Project Repository:
+			<a href="https://github.com/supetushar/IITM-FlashCards-Web-App-MAD-Project" target="_blank">Click Here !!
 			</a>
 		</p>
 	</section>
-	
+
 	<!-- Project Footer -->
-	<hr>		
+	<hr>
 	<footer>
-		<button class="button2" type="button" onclick="location.href='../../index.html'" title="Go to Home page">Home</button>
+		<button class="button2" type="button" onclick="location.href='../../index.html'"
+			title="Go to Home page">Home</button>
 		<button class="button3" id="topButton" type="button" onclick="topFunction()" title="Go to top">Top</button>
 		<p>Contact:
 			<a href="mailto:tusharsupe2311@gmail.com">tusharsupe2311@gmail.com</a>
 		</p>
 	</footer>
-	
+
 	<!-- Javascript -->
 	<script>
 		mybutton = document.getElementById("topButton");
 		function topFunction() {
-		  document.body.scrollTop = 0; // For Safari
-		  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, Opera
+			document.body.scrollTop = 0; // For Safari
+			document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, Opera
 		}
 	</script>
 </body>
