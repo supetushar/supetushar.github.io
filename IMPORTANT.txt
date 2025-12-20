@@ -1,2 +1,2 @@
 Do not change name of "index.html" file.
-QR code is associated with it.
+QR code is associated with it
