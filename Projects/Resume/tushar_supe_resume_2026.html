@@ -67,6 +67,7 @@
   ul.bullets{margin:0 0 4px; padding-left:20px;}
   ul.bullets li{font-size:.89rem; color:#2b2e37; margin-bottom:6px;}
   ul.bullets li::marker{color:var(--accent);}
+  ul.bullets li b{color:var(--ink);}
 
   .edu-item{display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px; margin-bottom:14px;}
   .edu-left b{font-size:.95rem;}
@@ -99,7 +100,7 @@
   <div class="toolbar">
     <a class="home" href="../../index.html">&larr; Back to site</a>
     <div class="actions">
-      <a class="btn" href="./Tushar_Supe_Resume_v4.pdf" target="_blank">Download PDF</a>
+      <a class="btn" href="./tushar_supe_resume_2026.pdf" target="_blank">Download PDF</a>
       <a class="btn primary" href="#" onclick="window.print(); return false;">Print / Save as PDF</a>
     </div>
   </div>
@@ -108,7 +109,7 @@
     <header class="head">
       <div>
         <h1>Tushar Supe</h1>
-        <div class="role">Senior Backend and AI/ML Engineer</div>
+        <div class="role">AI/ML Engineer</div>
       </div>
       <div class="contact">
         <div><a href="mailto:tusharsupe2311@gmail.com">tusharsupe2311@gmail.com</a></div>
@@ -120,48 +121,43 @@
     <hr class="rule">
 
     <h2 class="sec">Professional Summary</h2>
-    <p class="summary">Backend and AI/ML engineer with 3 years of experience building and operating production computer vision and applied AI systems for an AI-powered image platform serving automotive marketplaces across the United States, Canada, and India. Progressed from sole AI/ML engineer at an early-stage startup to technical lead, owning the full applied-AI lifecycle while managing a team of AI and backend engineers. Cut third-party inference costs by 75%+ and eliminated them entirely with in-house models, and reduced core API latency by over 99%. Holds a Bachelor's degree in Programming and Data Science from IIT Madras and a Bachelor's degree in Mechanical Engineering from VNIT Nagpur.</p>
+    <p class="summary">AI/ML and Backend engineer with 3+ years of experience building and operating production computer vision and applied AI systems for an AI-powered image platform serving automotive marketplaces across the United States, Canada, and India. Progressed from an individual contributor to a technical lead role, owning the full applied-AI lifecycle while managing a team of 4 AI and backend engineers. <b>Cut third-party inference costs by 75%+</b> and eliminated them entirely with in-house models, and reduced core API latency by over 99%.</p>
 
     <h2 class="sec">Work Experience</h2>
     <div class="job">
       <div class="job-top">
-        <div class="job-title">Senior Backend and AI/ML Engineer</div>
+        <div class="job-title">AI/ML Engineer</div>
         <div class="job-date">July 2023 &ndash; Present</div>
       </div>
-      <div class="job-org"><b>HelloRamp</b> &ndash; Bengaluru, India <i>AI-powered car and bus imaging platform</i></div>
-      <p class="job-desc">Serves automotive marketplaces, bus operators, and 100+ U.S. dealership groups. Joined a six-person startup as a backend engineer and became its sole AI/ML engineer, independently owning the computer vision roadmap, backend platform, and cloud infrastructure end-to-end before progressing into a technical lead role.</p>
+      <div class="job-org"><b>HelloRamp [HelloAR]</b> &ndash; Bengaluru, India <i>AI visual merchandising software</i></div>
 
       <div class="role-cat">Computer Vision and Applied AI</div>
       <ul class="bullets">
-        <li>Built an end-to-end virtual-studio car imaging pipeline: background removal, orientation and tilt correction, AI-generated shadow/reflection, license plate detection and anonymization, and studio-background placement, fusing 15+ production CV models to output photorealistic images at 97&ndash;99.5% accuracy or IoU.</li>
-        <li>Scaled this pipeline into a high-throughput production system processing roughly a quarter-million images per month with 8x burst capacity, while cutting per-image processing time by 70% and pipeline memory footprint by over 95% through threading, caching, and alignment-logic optimization.</li>
-        <li>Extended the pipeline to bus imagery and shipped a thin-part detection model, raising detection accuracy from 60% to 85% while cutting inference latency by roughly 4x and container size by roughly 15x through model and runtime optimization (ONNX export, image slicing, custom post-processing).</li>
-        <li>Reduced model training compute cost by 75% through GPU tier optimization and custom training pipeline improvements, and cut distributed-GPU training wall-clock time from roughly 3 months to under a week through parallelization and pipeline redesign.</li>
-        <li>Automated 3D synthetic-data generation (Blender, distributed multi-GPU rendering), cutting a 450+ day rendering workload down to roughly a week and enabling continuous scaling of training data.</li>
+        <li>Built an end-to-end virtual-studio car imaging pipeline: background removal, orientation and tilt correction, AI-generated shadow/reflection, license plate detection and anonymization, and studio-background placement, fusing <b>15+ production CV models</b> to output photorealistic images at 97&ndash;99.5% accuracy or IoU.</li>
+        <li>Scaled the imaging pipeline into a high-throughput production system processing ~250K+ images per month with 8&times; burst capacity, while <b>cutting per-image processing time by 70%</b> and pipeline memory footprint by over 95% through threading, caching, and alignment-logic optimization.</li>
+        <li>Extended the imaging pipeline to bus imagery and shipped a thin-part detection model, <b>raising detection accuracy from 60% to 85%</b> while cutting inference latency by ~4&times; and container size by ~15&times; through model and runtime optimization (ONNX export, image slicing, custom post-processing).</li>
+        <li><b>Reduced model training compute cost by 75%</b> through GPU tier optimization and custom training pipeline improvements, and cut distributed-GPU training time from ~3 months to under a week through parallelization and pipeline redesign.</li>
+        <li>Automated 3D synthetic-data generation (Blender, distributed multi-GPU rendering), <b>cutting a 450+ day rendering workload down to a week</b> and enabling continuous scaling of training data.</li>
         <li>Engineered an interactive 360-degree car spin generation pipeline from walkaround imagery, evaluating and applying multiple novel-view-synthesis and multi-view-geometry approaches spanning classical structure-from-motion, neural rendering, and video stabilization.</li>
+        <li>Evaluated and prototyped generative-model approaches for background inpainting, reflection removal, and image harmonization, training custom models for each.</li>
       </ul>
 
       <div class="role-cat">Backend, Cloud, and Platform Engineering</div>
       <ul class="bullets">
-        <li>Led a two-phase authentication performance overhaul on a core production API, cutting response time by over 99% to consistently under 100ms through database indexing, caching, and query redesign.</li>
+        <li>Drove a company-wide cost-reduction program &ndash; in-house model hosting, database and API cost optimization, automated stale-data cleanup, and inference/pipeline efficiency work &ndash; <b>delivering over $64,000 per year in combined recurring savings</b>.</li>
+        <li><b>Cut GPU inference hosting cost by ~7&times;</b> by architecting a self-hosted, multi-model GPU inference platform across two cross-cloud migrations, reducing reliance on paid managed ML hosting.</li>
+        <li>Led a two-phase authentication performance overhaul on a core production API, <b>cutting response time by over 99% to under 100ms</b> through database indexing, caching, and query redesign.</li>
+        <li>Implemented a GCP AI inference gateway across 30+ in-house inference endpoints with a Redis-based rate limiter and custom metrics-driven autoscaling, handling ~1,000 requests per 20-second window while optimizing for cost-efficiency over raw throughput to match real production load and minimize idle spend.</li>
         <li>Established MongoDB schemas, aggregation pipelines, and indexing strategy for a document database layer supporting multiple microservices, and built the asynchronous task queue infrastructure behind it, resolving recurring worker crashes, memory exhaustion, and message-duplication issues under production load.</li>
-        <li>Drove a company-wide cost-reduction program &ndash; in-house model hosting, database and API cost optimization, automated stale-data cleanup, and inference/pipeline efficiency work &ndash; delivering over $64,000 per year in combined recurring savings, plus a separate one-time $2,000+ saving from GPU training optimization.</li>
-        <li>Cut GPU inference hosting cost by roughly 7x by architecting a self-hosted, multi-model GPU inference platform across two cross-cloud migrations, reducing reliance on paid managed ML hosting.</li>
-        <li>Implemented a GCP AI inference gateway across 30+ in-house inference endpoints with a Redis-based rate limiter and custom metrics-driven autoscaling, handling roughly 1,000 requests per 20-second window while optimizing for cost-efficiency over raw throughput to match real production load and minimize idle spend.</li>
-        <li>Owned end-to-end production incident response and database reliability at scale &ndash; including a multi-month retention cleanup that reduced one major collection's size by roughly a third &ndash; across application, database, task queue, and third-party API layers as the platform's primary infrastructure engineer.</li>
-      </ul>
-
-      <div class="role-cat">Applied R&amp;D</div>
-      <ul class="bullets">
-        <li>Evaluated and prototyped generative-model approaches for background inpainting, reflection removal, and image harmonization, training custom models for each.</li>
+        <li>Owned end-to-end production incident response and database reliability at scale &ndash; including a multi-month retention cleanup that <b>reduced one major collection's size by a third</b> &ndash; across application, database, task queue, and third-party API layers as the platform's primary infrastructure engineer.</li>
       </ul>
 
       <div class="role-cat">Team Leadership and AI Product Delivery</div>
       <ul class="bullets">
-        <li>Advanced from sole AI/ML engineer to technical lead at a sub-10-engineer startup: hired and mentored four backend and AI engineering interns, converted two to full-time AI engineers, and continued leading those engineers alongside three additional interns &ndash; while still independently shipping individual technical work end-to-end.</li>
-        <li>Own the AI and computer vision technical roadmap and technical hiring for AI engineering roles; review and merge pull requests across multiple repositories; serve as primary technical point of contact for major enterprise accounts.</li>
-        <li>Currently steering a team building an automated image quality-check and auto-correction system that flags issues via AI and routes unresolved cases to human review.</li>
+        <li><b>Advanced from individual contributor to a technical lead role</b> at a sub-10-engineer startup: mentored four AI and backend engineers &ndash; while still independently shipping individual technical work end-to-end.</li>
+        <li>Owned the AI and computer vision technical roadmap and technical hiring for AI engineering roles; handled technical support escalations for major enterprise accounts.</li>
         <li>Guided a team through delivery of an automated social media content pipeline (AI avatar-video, script, and voice generation with multi-platform posting and comment-reply agents) and shipped internal analytics dashboards covering image quality, volume, failure rate, and team performance.</li>
+        <li>Currently steering a team building an automated image quality-check and auto-correction system that flags issues via AI and routes unresolved cases to human review.</li>
       </ul>
     </div>
 
