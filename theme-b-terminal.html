@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tushar Supe — Senior Backend & AI/ML Engineer</title>
+<meta name="description" content="Tushar Supe — Senior Backend and AI/ML Engineer building production computer vision and applied AI systems.">
+<link rel="icon" type="image/x-icon" href="./images/avatar.jpg">
+<style>
+  :root{
+    --bg:#08090c; --fg:#d4d8dd; --green:#3ddc97; --amber:#ffb454; --cyan:#5ec8ff; --pink:#ff6ac1;
+    --card:#0f1115; --border:#22262e; --muted:#6b7280;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg); color:var(--fg); font-family:'Cascadia Code','Consolas',monospace; line-height:1.6;}
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+
+  .scanlines{position:fixed; inset:0; pointer-events:none; z-index:2; opacity:.03;
+    background:repeating-linear-gradient(0deg, #fff 0px, transparent 1px, transparent 2px);}
+  .crt-glow{position:fixed; inset:0; pointer-events:none; z-index:1;
+    background:radial-gradient(ellipse 70% 50% at 50% 0%, rgba(61,220,151,.07), transparent 60%);}
+
+  .wrap{max-width:960px; margin:0 auto; padding:0 6vw; position:relative; z-index:5;}
+
+  nav{position:sticky; top:0; z-index:50; display:flex; justify-content:space-between; align-items:center;
+    padding:20px 6vw; border-bottom:1px solid var(--border); background:rgba(8,9,12,.85); backdrop-filter:blur(10px);}
+  .logo::before{content:'~/'; color:var(--muted);}
+  .logo{font-weight:700; color:var(--green);}
+  nav ul{display:flex; gap:26px; list-style:none; font-size:.85rem;}
+  nav a{color:var(--muted); text-decoration:none;}
+  nav a::before{content:'./'; color:var(--border);}
+  nav a:hover{color:var(--cyan);}
+
+  .terminal-window{max-width:920px; margin:50px auto 20px; border:1px solid var(--border); border-radius:12px;
+    background:var(--card); box-shadow:0 30px 80px -30px rgba(0,0,0,.8); position:relative; z-index:5; overflow:hidden;}
+  .tw-bar{display:flex; align-items:center; gap:8px; padding:12px 16px; background:#14161b; border-bottom:1px solid var(--border);}
+  .tw-dot{width:11px; height:11px; border-radius:50%;}
+  .tw-title{margin-left:12px; color:var(--muted); font-size:.8rem;}
+  .tw-body{padding:32px 36px 40px;}
+  .prompt{color:var(--muted); font-size:.9rem;}
+  .prompt .user{color:var(--green);}
+  .prompt .path{color:var(--cyan);}
+  .typed{color:var(--fg); font-size:.9rem;}
+  .cursor{display:inline-block; width:8px; height:16px; background:var(--green); animation:blink 1s step-end infinite; vertical-align:middle;}
+  @keyframes blink{50%{opacity:0;}}
+
+  h1{font-size:clamp(1.8rem,5vw,3.2rem); margin:24px 0 10px; font-weight:700;}
+  h1 .brack{color:var(--muted);}
+  h1 .name{color:var(--green);}
+  .role-line{color:var(--amber); font-size:1.02rem; margin-bottom:20px;}
+  .role-line .prefix{color:var(--muted);}
+  p.desc{color:var(--fg); opacity:.85; max-width:640px; font-size:.92rem;}
+  .tag-row{display:flex; gap:10px; flex-wrap:wrap; margin-top:22px;}
+  .tag{border:1px solid var(--border); color:var(--cyan); padding:5px 12px; border-radius:6px; font-size:.76rem; background:#0d1a17;}
+
+  .btn-row{margin-top:28px; display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{font-family:inherit; padding:12px 22px; border-radius:8px; font-size:.85rem; text-decoration:none; font-weight:600; border:1px solid transparent; display:inline-block;}
+  .btn-run{background:var(--green); color:#05130d;}
+  .btn-run:hover{filter:brightness(1.1);}
+  .btn-cmd{border-color:var(--border); color:var(--fg);}
+  .btn-cmd:hover{border-color:var(--cyan); color:var(--cyan);}
+
+  .stats-line{display:flex; gap:30px; margin-top:32px; padding-top:24px; border-top:1px dashed var(--border); flex-wrap:wrap;}
+  .stats-line div{font-size:.8rem; color:var(--muted);}
+  .stats-line b{color:var(--fg); display:block; font-size:1.25rem;}
+
+  .reveal{opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  section{padding:60px 0;}
+  .comment{color:var(--muted); margin-bottom:8px; font-size:.85rem;}
+  .comment::before{content:'// ';}
+  .cmd-line{color:var(--muted); font-size:.85rem; margin-bottom:26px;}
+  .cmd-line .user{color:var(--green);} .cmd-line .path{color:var(--cyan);}
+
+  /* Experience */
+  .exp-block{border:1px solid var(--border); border-radius:10px; background:var(--card); padding:30px 32px; position:relative;}
+  .exp-block::before{content:'●'; color:var(--green); position:absolute; top:-10px; left:24px; background:var(--bg); padding:0 6px; font-size:.7rem;}
+  .exp-top{display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; margin-bottom:6px;}
+  .exp-role{color:var(--green); font-size:1.15rem; font-weight:700;}
+  .exp-date{color:var(--amber); font-size:.82rem;}
+  .exp-org{color:var(--muted); font-size:.85rem; margin-bottom:14px;}
+  .exp-org b{color:var(--fg);}
+  .exp-desc{color:var(--fg); opacity:.8; font-size:.86rem; margin-bottom:22px; line-height:1.7;}
+
+  .exp-cats{display:grid; grid-template-columns:repeat(2,1fr); gap:24px;}
+  .exp-cat .hdr{color:var(--cyan); font-size:.84rem; font-weight:700; margin-bottom:10px;}
+  .exp-cat .hdr::before{content:'$ '; color:var(--muted);}
+  .exp-cat ul{list-style:none; display:flex; flex-direction:column; gap:8px;}
+  .exp-cat li{font-size:.82rem; color:#b8bec9; padding-left:16px; position:relative; line-height:1.55;}
+  .exp-cat li::before{content:'>'; position:absolute; left:0; color:var(--green);}
+
+  .prior{margin-top:24px; padding-top:20px; border-top:1px dashed var(--border); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; font-size:.82rem;}
+  .prior .p-title{color:var(--fg); font-weight:700;}
+  .prior .p-org{color:var(--muted);}
+  .prior .p-date{color:var(--amber);}
+
+  /* Projects */
+  .proj-tag{color:var(--pink); font-size:.78rem; margin-bottom:20px;}
+  .proj-tag::before{content:'# ';}
+  .file-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px;}
+  .file{border:1px solid var(--border); border-radius:10px; overflow:hidden; background:var(--card); transition:border-color .2s, transform .2s; text-decoration:none; display:block;}
+  .file:hover{border-color:var(--green); transform:translateX(4px);}
+  .file .thumb{height:130px; overflow:hidden; background:#14161b;}
+  .file .thumb img{width:100%; height:100%; object-fit:cover;}
+  .file .body{padding:16px 20px;}
+  .file .fname{color:var(--cyan); font-size:.86rem; margin-bottom:6px;}
+  .file .fname::before{content:'📄 ';}
+  .file p{color:var(--muted); font-size:.78rem;}
+
+  /* About */
+  .about-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:40px;}
+  .about-text p{color:var(--fg); opacity:.82; font-size:.87rem; margin-bottom:14px; line-height:1.75;}
+  .edu-card{border:1px solid var(--border); border-radius:10px; padding:18px 20px; margin-bottom:14px; background:var(--card);}
+  .edu-card .deg{color:var(--green); font-weight:700; font-size:.88rem;}
+  .edu-card .sch{color:var(--muted); font-size:.78rem; margin-top:4px;}
+  .edu-card .yr{color:var(--amber); font-size:.76rem; margin-top:6px;}
+
+  /* Resume + Contact */
+  .split{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+  .panel{border:1px solid var(--border); border-radius:10px; background:var(--card); padding:30px;}
+  .panel h3{color:var(--green); font-size:1.1rem; margin-bottom:10px;}
+  .panel h3::before{content:'$ ';color:var(--muted);}
+  .panel p{color:var(--muted); font-size:.83rem; margin-bottom:20px; line-height:1.6;}
+  .contact-list{list-style:none; display:flex; flex-direction:column; gap:12px;}
+  .contact-list a{text-decoration:none; color:var(--fg); font-size:.84rem; display:flex; align-items:center; gap:10px;}
+  .contact-list a:hover{color:var(--cyan);}
+  .contact-list .ic{color:var(--green);}
+
+  footer{text-align:center; padding:36px 6vw; color:var(--muted); font-size:.8rem; border-top:1px solid var(--border);}
+  footer a{color:var(--muted); text-decoration:none;}
+  footer a:hover{color:var(--cyan);}
+
+  @media (max-width:900px){
+    .exp-cats{grid-template-columns:1fr;}
+    .file-grid{grid-template-columns:1fr;}
+    .about-grid{grid-template-columns:1fr;}
+    .split{grid-template-columns:1fr;}
+  }
+  @media (max-width:640px){ nav ul{display:none;} }
+</style>
+</head>
+<body>
+  <div class="crt-glow"></div><div class="scanlines"></div>
+
+  <nav>
+    <div class="logo">tushar-supe</div>
+    <ul>
+      <li><a href="#experience">experience</a></li>
+      <li><a href="#projects">projects</a></li>
+      <li><a href="#about">about</a></li>
+      <li><a href="Projects/Resume/resume_v4.html">resume</a></li>
+      <li><a href="#contact">contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="terminal-window">
+    <div class="tw-bar">
+      <div class="tw-dot" style="background:#ff5f57"></div>
+      <div class="tw-dot" style="background:#febc2e"></div>
+      <div class="tw-dot" style="background:#28c840"></div>
+      <div class="tw-title">tushar@portfolio: ~</div>
+    </div>
+    <div class="tw-body">
+      <div class="prompt"><span class="user">tushar@dev</span>:<span class="path">~</span>$ <span class="typed">whoami</span><span class="cursor"></span></div>
+      <h1><span class="brack">&gt;</span> <span class="name">Tushar Supe</span></h1>
+      <div class="role-line"><span class="prefix">role:</span> Senior Backend &amp; AI/ML Engineer @ HelloRamp</div>
+      <p class="desc">Building production computer-vision pipelines and backend infra for an AI imaging platform serving automotive marketplaces across the US, Canada &amp; India. From sole ML engineer to technical lead.</p>
+      <div class="tag-row">
+        <span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">Computer Vision</span>
+        <span class="tag">MongoDB</span><span class="tag">AWS / GCP</span><span class="tag">LangGraph</span>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-run" href="Projects/Resume/resume_v4.html">▶ run resume.html</a>
+        <a class="btn btn-cmd" href="#projects">cat projects/</a>
+      </div>
+      <div class="stats-line">
+        <div><b>3+ yrs</b>production AI</div>
+        <div><b>99%</b>latency cut</div>
+        <div><b>15+</b>CV models fused</div>
+        <div><b>$64K+</b>saved / year</div>
+      </div>
+    </div>
+  </div>
+
+  <section id="experience" class="wrap">
+    <div class="cmd-line reveal"><span class="user">tushar@dev</span>:<span class="path">~</span>$ cat experience.log</div>
+    <div class="exp-block reveal">
+      <div class="exp-top">
+        <div class="exp-role">Senior Backend and AI/ML Engineer</div>
+        <div class="exp-date">Jul 2023 — Present</div>
+      </div>
+      <div class="exp-org"><b>HelloRamp</b> — Bengaluru, India · AI-powered car and bus imaging platform</div>
+      <p class="exp-desc">Serves automotive marketplaces, bus operators, and 100+ U.S. dealership groups. Joined a six-person startup as a backend engineer and became its sole AI/ML engineer, independently owning the computer vision roadmap, backend platform, and cloud infrastructure end-to-end before progressing into a technical lead role.</p>
+
+      <div class="exp-cats">
+        <div class="exp-cat">
+          <div class="hdr">computer_vision_and_applied_ai</div>
+          <ul>
+            <li>Built an end-to-end virtual-studio car imaging pipeline fusing 15+ production CV models at 97–99.5% accuracy/IoU.</li>
+            <li>Scaled to ~250K images/month, 8x burst capacity; cut per-image processing time 70%, memory footprint 95%+.</li>
+            <li>Shipped bus thin-part detection: accuracy 60%→85%, inference latency ~4x faster, container size ~15x smaller.</li>
+            <li>Cut GPU training cost 75%; distributed training time from ~3 months to under a week.</li>
+            <li>Automated 3D synthetic-data generation (Blender, multi-GPU): 450+ day render workload → ~1 week.</li>
+            <li>Engineered an interactive 360° car spin pipeline via novel-view-synthesis and multi-view geometry.</li>
+          </ul>
+        </div>
+        <div class="exp-cat">
+          <div class="hdr">backend_cloud_and_platform</div>
+          <ul>
+            <li>Led an auth overhaul cutting response time 99%+ to consistently under 100ms.</li>
+            <li>Designed MongoDB schemas + async task-queue infra across microservices.</li>
+            <li>Drove a cost-reduction program: $64,000+/year in recurring savings.</li>
+            <li>Cut GPU inference hosting cost ~7x via self-hosted multi-model platform, two cloud migrations.</li>
+            <li>Built a GCP AI inference gateway across 30+ endpoints with Redis rate-limiting + autoscaling.</li>
+            <li>Owned production incident response and DB reliability as primary infra engineer.</li>
+          </ul>
+        </div>
+        <div class="exp-cat">
+          <div class="hdr">applied_r_and_d</div>
+          <ul>
+            <li>Prototyped generative-model approaches for background inpainting, reflection removal, and image harmonization.</li>
+          </ul>
+        </div>
+        <div class="exp-cat">
+          <div class="hdr">team_leadership_and_delivery</div>
+          <ul>
+            <li>Advanced from sole AI/ML engineer to technical lead; hired/mentored 4 interns, 2 converted full-time.</li>
+            <li>Own AI/CV roadmap and hiring; review/merge PRs across repos; primary technical POC for enterprise accounts.</li>
+            <li>Steering an automated image quality-check + auto-correction system with human-review routing.</li>
+            <li>Guided delivery of an automated social pipeline (AI avatar/script/voice) + internal analytics dashboards.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="prior">
+        <div><div class="p-title">Maintenance Engineer, Graduate Engineer Trainee</div><div class="p-org">Reliance Industries Limited — mechanical plant maintenance</div></div>
+        <div class="p-date">2019 — 2020</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="wrap">
+    <div class="cmd-line reveal"><span class="user">tushar@dev</span>:<span class="path">~/projects</span>$ ls -la</div>
+    <div class="proj-tag reveal">personal side-projects, built for fun and learning</div>
+    <div class="file-grid reveal">
+      <a class="file" href="Projects/OSTS_SE/osts_se.html">
+        <div class="thumb"><img src="Projects/OSTS_SE/osts_se_thumbnail.png" alt="Online Support Ticket System"></div>
+        <div class="body"><div class="fname">online_support_ticket_system.html</div><p>Full-stack support ticketing web app</p></div>
+      </a>
+      <a class="file" href="Projects/FlashCards/flashcards.html">
+        <div class="thumb"><img src="Projects/FlashCards/flashcards_thumbnail.png" alt="Flash-Cards Web App"></div>
+        <div class="body"><div class="fname">flashcards.html</div><p>Spaced-repetition study tool</p></div>
+      </a>
+      <a class="file" href="Projects/Coding_Puzzles/coding_puzzles.html">
+        <div class="thumb"><img src="Projects/Coding_Puzzles/coding_puzzles_thumbnail.png" alt="Coding Puzzles Android App"></div>
+        <div class="body"><div class="fname">coding_puzzles.html</div><p>Android coding puzzles app</p></div>
+      </a>
+      <a class="file" href="Projects/Save_The_Pod_PyGame/save_the_pod_pygame.html">
+        <div class="thumb"><img src="Projects/Save_The_Pod_PyGame/save_the_pod_pygame_thumbnail.png" alt="Save The Pod Python Game"></div>
+        <div class="body"><div class="fname">save_the_pod_pygame.html</div><p>2D Python arcade game (PyGame)</p></div>
+      </a>
+      <a class="file" href="Projects/GAN_Digits_MNIST/gan_digits_mnist.html">
+        <div class="thumb"><img src="Projects/GAN_Digits_MNIST/gan_digits_mnist_thumbnail.png" alt="DCGAN Digits MNIST"></div>
+        <div class="body"><div class="fname">gan_digits_mnist.html</div><p>DCGAN on MNIST digits</p></div>
+      </a>
+      <a class="file" href="Projects/GAN_Anime_Faces/gan_anime_faces.html">
+        <div class="thumb"><img src="Projects/GAN_Anime_Faces/gan_anime_faces_thumbnail.png" alt="DCGAN Anime Faces"></div>
+        <div class="body"><div class="fname">gan_anime_faces.html</div><p>DCGAN on anime faces</p></div>
+      </a>
+      <a class="file" href="Projects/CNN_Object_Classify_Localize/cnn_object_classify_and_localize.html">
+        <div class="thumb"><img src="Projects/CNN_Object_Classify_Localize/cnn_object_classify_and_localize_thumbnail.png" alt="CNN Object Classification and Localization"></div>
+        <div class="body"><div class="fname">cnn_object_classify_and_localize.html</div><p>Object classification &amp; localization (CNN)</p></div>
+      </a>
+    </div>
+  </section>
+
+  <section id="about" class="wrap">
+    <div class="cmd-line reveal"><span class="user">tushar@dev</span>:<span class="path">~</span>$ cat about.md</div>
+    <div class="about-grid reveal">
+      <div class="about-text">
+        <p>I started out as a Mechanical Engineer at VNIT Nagpur, then spent a year in plant maintenance at Reliance Industries before pivoting into programming and data science — completing a second Bachelor's degree at IIT Madras while building a career in applied AI from the ground up.</p>
+        <p>Since 2023 I've been at HelloRamp, where I went from the company's first and only AI/ML engineer to technical lead, building the computer-vision systems, backend platform, and cloud infrastructure that power an AI imaging product used by automotive marketplaces across three countries.</p>
+        <p>I care about production reliability as much as model accuracy — most of the work above is as much about cost, latency, and uptime as it is about pushing pixels through a neural network.</p>
+      </div>
+      <div class="edu-list">
+        <div class="edu-card">
+          <div class="deg">B.S., Programming and Data Science</div>
+          <div class="sch">IIT Madras · CGPA 9.2/10</div>
+          <div class="yr">2020 — 2023</div>
+        </div>
+        <div class="edu-card">
+          <div class="deg">B.Tech, Mechanical Engineering</div>
+          <div class="sch">VNIT Nagpur · CGPA 8.12/10</div>
+          <div class="yr">2015 — 2019</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="wrap">
+    <div class="split reveal">
+      <div class="panel">
+        <h3>open resume.html</h3>
+        <p>View the full HTML version in-browser, or download the PDF — always up to date.</p>
+        <a class="btn btn-run" href="Projects/Resume/resume_v4.html">▶ view resume</a>
+      </div>
+      <div class="panel">
+        <h3>contact --info</h3>
+        <p>Open to interesting problems in AI, computer vision, and backend systems.</p>
+        <ul class="contact-list">
+          <li><a href="mailto:tusharsupe2311@gmail.com"><span class="ic">@</span> tusharsupe2311@gmail.com</a></li>
+          <li><a href="https://wa.me/918550974600" target="_blank"><span class="ic">#</span> +91-8550974600</a></li>
+          <li><a href="https://www.linkedin.com/in/tushar-supe/" target="_blank"><span class="ic">in</span> linkedin.com/in/tushar-supe</a></li>
+          <li><a href="https://github.com/supetushar" target="_blank"><span class="ic">gh</span> github.com/supetushar</a></li>
+          <li><a href="https://www.kaggle.com/tushars23" target="_blank"><span class="ic">kg</span> kaggle.com/tushars23</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2026 Tushar Supe — built from scratch, no frameworks. <a href="links.html">more links</a>
+  </footer>
+
+  <script>
+    const els = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    }, {threshold:.12});
+    els.forEach(el=>io.observe(el));
+  </script>
+</body>
+</html>

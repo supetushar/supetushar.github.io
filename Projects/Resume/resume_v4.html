@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tushar Supe — Resume</title>
+<link rel="icon" type="image/x-icon" href="../../images/avatar.jpg">
+<style>
+  :root{
+    --accent:#7c5cff; --accent2:#22d3ee;
+    --ink:#171a21; --sub:#4a4f5c; --line:#e4e6ec; --bg:#ffffff; --tint:#f7f7fb;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--tint); color:var(--ink);
+    font-family:'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+    line-height:1.55; padding:36px 16px 80px;
+  }
+  .toolbar{
+    max-width:850px; margin:0 auto 18px; display:flex; justify-content:space-between; align-items:center;
+    gap:12px; flex-wrap:wrap;
+  }
+  .toolbar a.home{color:var(--sub); text-decoration:none; font-size:.9rem; font-weight:600;}
+  .toolbar a.home:hover{color:var(--accent);}
+  .actions{display:flex; gap:10px;}
+  .btn{
+    padding:9px 18px; border-radius:9px; font-size:.85rem; font-weight:600; text-decoration:none;
+    border:1px solid var(--line); color:var(--ink); background:#fff; transition:all .2s;
+  }
+  .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#fff; border:none;}
+  .btn:hover{transform:translateY(-2px); box-shadow:0 8px 20px -8px rgba(124,92,255,.4);}
+
+  .sheet{
+    max-width:850px; margin:0 auto; background:var(--bg); border-radius:16px;
+    box-shadow:0 20px 60px -25px rgba(20,20,40,.25); border:1px solid var(--line);
+    padding:52px 56px;
+  }
+  .sheet::before{content:''; display:block; height:6px; margin:-52px -56px 40px;
+    background:linear-gradient(90deg,var(--accent),var(--accent2));
+    border-radius:16px 16px 0 0;}
+
+  header.head{display:flex; justify-content:space-between; align-items:flex-start; gap:20px; flex-wrap:wrap; margin-bottom:6px;}
+  header.head h1{margin:0; font-size:2rem; letter-spacing:-.5px;}
+  header.head .role{color:var(--accent); font-weight:600; font-size:1.05rem; margin-top:2px;}
+  .contact{text-align:right; font-size:.85rem; color:var(--sub); line-height:1.7;}
+  .contact a{color:var(--sub); text-decoration:none;}
+  .contact a:hover{color:var(--accent);}
+  hr.rule{border:none; border-top:2px solid var(--line); margin:20px 0 26px;}
+
+  h2.sec{
+    font-size:.78rem; text-transform:uppercase; letter-spacing:1.5px; font-weight:800;
+    color:var(--accent); margin:34px 0 14px; padding-bottom:8px; border-bottom:2px solid var(--line);
+  }
+  h2.sec:first-of-type{margin-top:0;}
+  p.summary{color:var(--ink); font-size:.95rem;}
+
+  .job{margin-bottom:22px;}
+  .job-top{display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:6px;}
+  .job-title{font-weight:700; font-size:1.02rem;}
+  .job-date{color:var(--sub); font-size:.85rem; font-weight:600;}
+  .job-org{display:flex; justify-content:space-between; font-size:.9rem; color:var(--sub); margin-top:2px; flex-wrap:wrap; gap:6px;}
+  .job-org b{color:var(--ink);}
+  .job-org i{color:var(--sub);}
+  .job-desc{font-size:.9rem; color:var(--sub); margin:8px 0 10px;}
+
+  .role-cat{font-weight:700; font-size:.87rem; margin:14px 0 6px; color:var(--ink);}
+  ul.bullets{margin:0 0 4px; padding-left:20px;}
+  ul.bullets li{font-size:.89rem; color:#2b2e37; margin-bottom:6px;}
+  ul.bullets li::marker{color:var(--accent);}
+
+  .edu-item{display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px; margin-bottom:14px;}
+  .edu-left b{font-size:.95rem;}
+  .edu-left div{font-size:.85rem; color:var(--sub); margin-top:2px;}
+  .edu-date{color:var(--sub); font-size:.85rem; font-weight:600; white-space:nowrap;}
+
+  .skills-grid{display:grid; grid-template-columns:150px 1fr; gap:10px 18px; font-size:.87rem;}
+  .skills-grid dt{font-weight:700; color:var(--ink);}
+  .skills-grid dd{margin:0; color:var(--sub);}
+
+  @media (max-width:700px){
+    .sheet{padding:30px 22px;}
+    .sheet::before{margin:-30px -22px 26px;}
+    header.head{flex-direction:column;}
+    .contact{text-align:left;}
+    .skills-grid{grid-template-columns:1fr;}
+    .skills-grid dt{margin-top:8px;}
+  }
+
+  @media print{
+    body{background:#fff; padding:0;}
+    .toolbar{display:none;}
+    .sheet{box-shadow:none; border:none; max-width:100%; padding:20px 30px;}
+    .sheet::before{margin:-20px -30px 20px;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="toolbar">
+    <a class="home" href="../../index.html">&larr; Back to site</a>
+    <div class="actions">
+      <a class="btn" href="./Tushar_Supe_Resume_v4.pdf" target="_blank">Download PDF</a>
+      <a class="btn primary" href="#" onclick="window.print(); return false;">Print / Save as PDF</a>
+    </div>
+  </div>
+
+  <div class="sheet">
+    <header class="head">
+      <div>
+        <h1>Tushar Supe</h1>
+        <div class="role">Senior Backend and AI/ML Engineer</div>
+      </div>
+      <div class="contact">
+        <div><a href="mailto:tusharsupe2311@gmail.com">tusharsupe2311@gmail.com</a></div>
+        <div>+91-8550974600</div>
+        <div><a href="https://www.linkedin.com/in/tushar-supe/" target="_blank">linkedin.com/in/tushar-supe</a></div>
+        <div><a href="https://github.com/supetushar" target="_blank">github.com/supetushar</a> &nbsp;|&nbsp; <a href="https://supetushar.github.io/" target="_blank">supetushar.github.io</a></div>
+      </div>
+    </header>
+    <hr class="rule">
+
+    <h2 class="sec">Professional Summary</h2>
+    <p class="summary">Backend and AI/ML engineer with 3 years of experience building and operating production computer vision and applied AI systems for an AI-powered image platform serving automotive marketplaces across the United States, Canada, and India. Progressed from sole AI/ML engineer at an early-stage startup to technical lead, owning the full applied-AI lifecycle while managing a team of AI and backend engineers. Cut third-party inference costs by 75%+ and eliminated them entirely with in-house models, and reduced core API latency by over 99%. Holds a Bachelor's degree in Programming and Data Science from IIT Madras and a Bachelor's degree in Mechanical Engineering from VNIT Nagpur.</p>
+
+    <h2 class="sec">Work Experience</h2>
+    <div class="job">
+      <div class="job-top">
+        <div class="job-title">Senior Backend and AI/ML Engineer</div>
+        <div class="job-date">July 2023 &ndash; Present</div>
+      </div>
+      <div class="job-org"><b>HelloRamp</b> &ndash; Bengaluru, India <i>AI-powered car and bus imaging platform</i></div>
+      <p class="job-desc">Serves automotive marketplaces, bus operators, and 100+ U.S. dealership groups. Joined a six-person startup as a backend engineer and became its sole AI/ML engineer, independently owning the computer vision roadmap, backend platform, and cloud infrastructure end-to-end before progressing into a technical lead role.</p>
+
+      <div class="role-cat">Computer Vision and Applied AI</div>
+      <ul class="bullets">
+        <li>Built an end-to-end virtual-studio car imaging pipeline: background removal, orientation and tilt correction, AI-generated shadow/reflection, license plate detection and anonymization, and studio-background placement, fusing 15+ production CV models to output photorealistic images at 97&ndash;99.5% accuracy or IoU.</li>
+        <li>Scaled this pipeline into a high-throughput production system processing roughly a quarter-million images per month with 8x burst capacity, while cutting per-image processing time by 70% and pipeline memory footprint by over 95% through threading, caching, and alignment-logic optimization.</li>
+        <li>Extended the pipeline to bus imagery and shipped a thin-part detection model, raising detection accuracy from 60% to 85% while cutting inference latency by roughly 4x and container size by roughly 15x through model and runtime optimization (ONNX export, image slicing, custom post-processing).</li>
+        <li>Reduced model training compute cost by 75% through GPU tier optimization and custom training pipeline improvements, and cut distributed-GPU training wall-clock time from roughly 3 months to under a week through parallelization and pipeline redesign.</li>
+        <li>Automated 3D synthetic-data generation (Blender, distributed multi-GPU rendering), cutting a 450+ day rendering workload down to roughly a week and enabling continuous scaling of training data.</li>
+        <li>Engineered an interactive 360-degree car spin generation pipeline from walkaround imagery, evaluating and applying multiple novel-view-synthesis and multi-view-geometry approaches spanning classical structure-from-motion, neural rendering, and video stabilization.</li>
+      </ul>
+
+      <div class="role-cat">Backend, Cloud, and Platform Engineering</div>
+      <ul class="bullets">
+        <li>Led a two-phase authentication performance overhaul on a core production API, cutting response time by over 99% to consistently under 100ms through database indexing, caching, and query redesign.</li>
+        <li>Established MongoDB schemas, aggregation pipelines, and indexing strategy for a document database layer supporting multiple microservices, and built the asynchronous task queue infrastructure behind it, resolving recurring worker crashes, memory exhaustion, and message-duplication issues under production load.</li>
+        <li>Drove a company-wide cost-reduction program &ndash; in-house model hosting, database and API cost optimization, automated stale-data cleanup, and inference/pipeline efficiency work &ndash; delivering over $64,000 per year in combined recurring savings, plus a separate one-time $2,000+ saving from GPU training optimization.</li>
+        <li>Cut GPU inference hosting cost by roughly 7x by architecting a self-hosted, multi-model GPU inference platform across two cross-cloud migrations, reducing reliance on paid managed ML hosting.</li>
+        <li>Implemented a GCP AI inference gateway across 30+ in-house inference endpoints with a Redis-based rate limiter and custom metrics-driven autoscaling, handling roughly 1,000 requests per 20-second window while optimizing for cost-efficiency over raw throughput to match real production load and minimize idle spend.</li>
+        <li>Owned end-to-end production incident response and database reliability at scale &ndash; including a multi-month retention cleanup that reduced one major collection's size by roughly a third &ndash; across application, database, task queue, and third-party API layers as the platform's primary infrastructure engineer.</li>
+      </ul>
+
+      <div class="role-cat">Applied R&amp;D</div>
+      <ul class="bullets">
+        <li>Evaluated and prototyped generative-model approaches for background inpainting, reflection removal, and image harmonization, training custom models for each.</li>
+      </ul>
+
+      <div class="role-cat">Team Leadership and AI Product Delivery</div>
+      <ul class="bullets">
+        <li>Advanced from sole AI/ML engineer to technical lead at a sub-10-engineer startup: hired and mentored four backend and AI engineering interns, converted two to full-time AI engineers, and continued leading those engineers alongside three additional interns &ndash; while still independently shipping individual technical work end-to-end.</li>
+        <li>Own the AI and computer vision technical roadmap and technical hiring for AI engineering roles; review and merge pull requests across multiple repositories; serve as primary technical point of contact for major enterprise accounts.</li>
+        <li>Currently steering a team building an automated image quality-check and auto-correction system that flags issues via AI and routes unresolved cases to human review.</li>
+        <li>Guided a team through delivery of an automated social media content pipeline (AI avatar-video, script, and voice generation with multi-platform posting and comment-reply agents) and shipped internal analytics dashboards covering image quality, volume, failure rate, and team performance.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-top">
+        <div class="job-title">Maintenance Engineer, Graduate Engineer Trainee</div>
+        <div class="job-date">2019 &ndash; 2020</div>
+      </div>
+      <div class="job-org"><b>Reliance Industries Limited</b></div>
+      <p class="job-desc">Mechanical plant maintenance at a large-scale manufacturing facility.</p>
+    </div>
+
+    <h2 class="sec">Education</h2>
+    <div class="edu-item">
+      <div class="edu-left">
+        <b>Bachelor of Science, Programming and Data Science</b>
+        <div>Indian Institute of Technology (IIT), Madras &middot; CGPA: 9.2/10</div>
+        <div>Coursework: Machine Learning, Deep Learning, Artificial Intelligence, Data Structures and Algorithms, Database Management Systems</div>
+      </div>
+      <div class="edu-date">2020 &ndash; 2023</div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-left">
+        <b>Bachelor of Technology, Mechanical Engineering</b>
+        <div>Visvesvaraya National Institute of Technology (VNIT), Nagpur &middot; CGPA: 8.12/10</div>
+      </div>
+      <div class="edu-date">2015 &ndash; 2019</div>
+    </div>
+
+    <h2 class="sec">Personal Projects</h2>
+    <div class="job">
+      <div class="job-top"><div class="job-title">Automated Job Application Agent</div></div>
+      <p class="job-desc">Agentic system automating the end-to-end job search workflow: parses job descriptions, matches them against a structured candidate profile, generates tailored application materials, and completes submission steps through browser automation. Built with LangGraph/LangChain for agent orchestration, retrieval-augmented generation over candidate and job data, tool-calling and MCP integration, and a FastAPI/PostgreSQL/pgvector/Redis backend orchestrated with n8n and Playwright.</p>
+    </div>
+
+    <h2 class="sec">Skills and Tools</h2>
+    <dl class="skills-grid">
+      <dt>Languages</dt><dd>Python, Bash/Shell, JavaScript</dd>
+      <dt>ML &amp; Computer Vision</dt><dd>Deep learning model development and training, distributed multi-GPU training (PyTorch, AMP/FP16), computer vision (segmentation, detection, classification, matting), object detection (YOLO-family), generative modeling (GANs, diffusion models, CNNs), inference acceleration (ONNX), synthetic data generation, OpenCV, scikit-learn, 3D reconstruction and novel view synthesis (COLMAP, GLOMAP, Gaussian Splatting, NeRF/NeRFStudio), multi-view geometry and feature matching (SIFT, SuperPoint, SuperGlue)</dd>
+      <dt>AI/LLM &amp; Agentic Systems</dt><dd>LLM APIs (Claude, OpenAI, Gemini), LangGraph, LangChain, Retrieval-Augmented Generation (RAG, Agentic RAG), multi-agent systems, tool calling, Model Context Protocol (MCP), AI avatar/voice/video generation pipelines</dd>
+      <dt>Cloud &amp; Infrastructure</dt><dd>AWS (EC2, S3, Lambda, SQS, CloudFront, SageMaker, Secrets Manager), GCP (Compute Engine, Cloud Run, Cloud Build, Cloud Tasks, Vertex AI), self-hosted GPU inference platforms, Docker, GitHub Actions, Nginx, Blender (bpy) for synthetic 3D data</dd>
+      <dt>Databases &amp; Backend</dt><dd>MongoDB, MongoDB Atlas, PostgreSQL, pgvector, Redis, FastAPI, schema design and indexing, REST API development, asynchronous task queues (Celery), backend service architecture</dd>
+      <dt>Automation &amp; Tooling</dt><dd>n8n, Playwright, webhooks, LangSmith (observability)</dd>
+      <dt>Practices</dt><dd>Git version control, code review, technical hiring and team leadership, mentorship, cost optimization and infrastructure governance, production incident response, CI/CD</dd>
+    </dl>
+  </div>
+
+</body>
+</html>
