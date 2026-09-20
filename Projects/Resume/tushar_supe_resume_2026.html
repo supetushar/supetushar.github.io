@@ -22,7 +22,10 @@
   }
   .toolbar a.home{color:var(--sub); text-decoration:none; font-size:.9rem; font-weight:600;}
   .toolbar a.home:hover{color:var(--accent);}
-  .actions{display:flex; gap:10px;}
+  .actions{display:flex; flex-direction:column; align-items:flex-end; gap:6px;}
+  .actions .row{display:flex; gap:10px;}
+  .print-hint{font-size:.72rem; color:var(--sub); text-align:right; max-width:320px; line-height:1.5;}
+  .print-hint b{color:var(--ink);}
   .btn{
     padding:9px 18px; border-radius:9px; font-size:.85rem; font-weight:600; text-decoration:none;
     border:1px solid var(--line); color:var(--ink); background:#fff; transition:all .2s;
@@ -87,10 +90,23 @@
     .skills-grid dt{margin-top:8px;}
   }
 
+  @page{
+    size: A3 portrait;
+    margin: 0.25in 0.1in 0.1in 0.1in;
+  }
+
   @media print{
+    html, body{
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      color-adjust: exact;
+    }
     body{background:#fff; padding:0;}
     .toolbar{display:none;}
-    .sheet{box-shadow:none; border:none; max-width:100%; padding:20px 30px;}
+    .sheet{
+      box-shadow:none; border:none; max-width:100%; padding:20px 30px;
+      zoom: 1.17;
+    }
     .sheet::before{margin:-20px -30px 20px;}
   }
 </style>
@@ -100,8 +116,11 @@
   <div class="toolbar">
     <a class="home" href="../../index.html">&larr; Back to site</a>
     <div class="actions">
-      <a class="btn" href="./tushar_supe_resume_2026.pdf" target="_blank">Download PDF</a>
-      <a class="btn primary" href="#" onclick="window.print(); return false;">Print / Save as PDF</a>
+      <div class="row">
+        <a class="btn" href="./tushar_supe_resume_2026.pdf" target="_blank">Download PDF</a>
+        <a class="btn primary" href="#" onclick="window.print(); return false;">Print / Save as PDF</a>
+      </div>
+      <div class="print-hint">In the print dialog: Destination <b>Save as PDF</b>, Paper size <b>A3</b>, Margins <b>Custom</b>, Scale <b>117%</b>.</div>
     </div>
   </div>
 
