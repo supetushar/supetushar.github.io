@@ -41,6 +41,15 @@ body::before{
 		radial-gradient(circle at 40% 90%, var(--accent3) 0%, transparent 28%);
 }
 
+a {
+	color: var(--accent2);
+	text-decoration-color: rgba(34,211,238,.4);
+}
+
+a:hover{
+	color: #7fe6fa;
+}
+
 button {
 	color: var(--bg);
 	background: linear-gradient(135deg, var(--accent), var(--accent2));
@@ -61,6 +70,24 @@ button {
 button:hover{
 	transform: translateY(-2px);
 	box-shadow: 0 12px 30px -8px rgba(124,92,255,.8);
+}
+
+.status-badge{
+	display: inline-block;
+	font-size: .78rem;
+	font-weight: 700;
+	color: #4ade80;
+	background: rgba(74,222,128,.1);
+	border: 1px solid rgba(74,222,128,.35);
+	padding: 5px 14px;
+	border-radius: 999px;
+	margin-bottom: 14px;
+}
+
+p.timeline{
+	text-align: center;
+	color: var(--muted);
+	font-size: .85rem;
 }
 
 article.title {

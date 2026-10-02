@@ -92,7 +92,7 @@
   .exp-cat li{font-size:.82rem; color:#b8bec9; padding-left:16px; position:relative; line-height:1.55;}
   .exp-cat li::before{content:'>'; position:absolute; left:0; color:var(--green);}
 
-  .prior{margin-top:24px; padding-top:20px; border-top:1px dashed var(--border); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; font-size:.82rem;}
+  .prior{margin-top:24px; padding-top:20px; border-top:1px dashed var(--border); display:flex; flex-direction:column; gap:4px; font-size:.82rem;}
   .prior .p-title{color:var(--fg); font-weight:700;}
   .prior .p-org{color:var(--muted);}
   .prior .p-date{color:var(--amber);}
@@ -109,6 +109,32 @@
   .file .fname{color:var(--cyan); font-size:.86rem; margin-bottom:6px;}
   .file .fname::before{content:'📄 ';}
   .file p{color:var(--muted); font-size:.78rem;}
+
+  /* Featured single project + More Projects CTA */
+  .feat-project{display:flex; gap:24px; align-items:center; border:1px solid rgba(61,220,151,.4); border-radius:10px;
+    background:var(--card); padding:28px 30px; text-decoration:none; transition:border-color .2s, transform .2s;}
+  .feat-project:hover{transform:translateX(4px); border-color:var(--green);}
+  .feat-project .icon{flex:0 0 72px; height:72px; border-radius:10px; background:#0d1a17; display:flex; align-items:center; justify-content:center; font-size:2rem;}
+  .feat-project .body{flex:1; min-width:0;}
+  .status-pill{display:inline-flex; align-items:center; gap:6px; font-size:.72rem; font-weight:700; color:var(--green); margin-bottom:8px;}
+  .status-pill .dot{width:6px; height:6px; border-radius:50%; background:var(--green); box-shadow:0 0 6px var(--green);}
+  .feat-project .fname{color:var(--cyan); font-size:1.02rem; font-weight:700;}
+  .feat-project .fname::before{content:'📄 ';}
+  .feat-project .meta{color:var(--amber); font-size:.8rem; margin-top:4px;}
+  .feat-project p{color:var(--muted); font-size:.84rem; margin-top:10px; line-height:1.6;}
+  .feat-tag-row{display:flex; flex-wrap:wrap; gap:7px; margin-top:12px;}
+  .feat-tag{font-size:.72rem; color:var(--cyan); border:1px solid var(--border); padding:3px 10px; border-radius:6px; background:#0d1a17;}
+  .more-projects{text-align:center; margin-top:24px;}
+
+  /* Certifications */
+  .cert-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:12px;}
+  .cert-item{display:flex; align-items:center; justify-content:space-between; gap:10px; background:var(--card); border:1px solid var(--border);
+    border-radius:10px; padding:14px 18px; text-decoration:none; transition:all .2s; font-size:.82rem;}
+  .cert-item:hover{border-color:var(--cyan); transform:translateX(3px);}
+  .cert-item .name::before{content:'🎓 ';}
+  .cert-item .name{color:var(--fg);}
+  .cert-item .arrow{color:var(--cyan); opacity:.7;}
+  .more-certs{text-align:center; margin-top:24px;}
 
   /* About */
   .about-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:40px;}
@@ -150,6 +176,7 @@
     <ul>
       <li><a href="#experience">experience</a></li>
       <li><a href="#projects">projects</a></li>
+      <li><a href="#certifications">certifications</a></li>
       <li><a href="#about">about</a></li>
       <li><a href="Projects/Resume/tushar_supe_resume_2026.html">resume</a></li>
       <li><a href="#contact">contact</a></li>
@@ -230,44 +257,48 @@
       </div>
 
       <div class="prior">
-        <div><div class="p-title">Maintenance Engineer, Graduate Engineer Trainee</div><div class="p-org">Reliance Industries Limited — Hazira, Gujarat · mechanical plant maintenance</div></div>
+        <div class="p-title">Maintenance Engineer, Graduate Engineer Trainee</div>
+        <div class="p-org">Reliance Industries Limited — Hazira, Gujarat &middot; mechanical plant maintenance</div>
         <div class="p-date">2019 — 2020</div>
       </div>
     </div>
   </section>
 
   <section id="projects" class="wrap">
-    <div class="cmd-line reveal"><span class="user">tushar@dev</span>:<span class="path">~/projects</span>$ ls -la</div>
-    <div class="proj-tag reveal">personal side-projects, built for fun and learning</div>
-    <div class="file-grid reveal">
-      <a class="file" href="Projects/OSTS_SE/osts_se.html">
-        <div class="thumb"><img src="Projects/OSTS_SE/osts_se_thumbnail.png" alt="Online Support Ticket System"></div>
-        <div class="body"><div class="fname">online_support_ticket_system.html</div><p>Full-stack support ticketing web app</p></div>
-      </a>
-      <a class="file" href="Projects/FlashCards/flashcards.html">
-        <div class="thumb"><img src="Projects/FlashCards/flashcards_thumbnail.png" alt="Flash-Cards Web App"></div>
-        <div class="body"><div class="fname">flashcards.html</div><p>Spaced-repetition study tool</p></div>
-      </a>
-      <a class="file" href="Projects/Coding_Puzzles/coding_puzzles.html">
-        <div class="thumb"><img src="Projects/Coding_Puzzles/coding_puzzles_thumbnail.png" alt="Coding Puzzles Android App"></div>
-        <div class="body"><div class="fname">coding_puzzles.html</div><p>Android coding puzzles app</p></div>
-      </a>
-      <a class="file" href="Projects/Save_The_Pod_PyGame/save_the_pod_pygame.html">
-        <div class="thumb"><img src="Projects/Save_The_Pod_PyGame/save_the_pod_pygame_thumbnail.png" alt="Save The Pod Python Game"></div>
-        <div class="body"><div class="fname">save_the_pod_pygame.html</div><p>2D Python arcade game (PyGame)</p></div>
-      </a>
-      <a class="file" href="Projects/GAN_Digits_MNIST/gan_digits_mnist.html">
-        <div class="thumb"><img src="Projects/GAN_Digits_MNIST/gan_digits_mnist_thumbnail.png" alt="DCGAN Digits MNIST"></div>
-        <div class="body"><div class="fname">gan_digits_mnist.html</div><p>DCGAN on MNIST digits</p></div>
-      </a>
-      <a class="file" href="Projects/GAN_Anime_Faces/gan_anime_faces.html">
-        <div class="thumb"><img src="Projects/GAN_Anime_Faces/gan_anime_faces_thumbnail.png" alt="DCGAN Anime Faces"></div>
-        <div class="body"><div class="fname">gan_anime_faces.html</div><p>DCGAN on anime faces</p></div>
-      </a>
-      <a class="file" href="Projects/CNN_Object_Classify_Localize/cnn_object_classify_and_localize.html">
-        <div class="thumb"><img src="Projects/CNN_Object_Classify_Localize/cnn_object_classify_and_localize_thumbnail.png" alt="CNN Object Classification and Localization"></div>
-        <div class="body"><div class="fname">cnn_object_classify_and_localize.html</div><p>Object classification &amp; localization (CNN)</p></div>
-      </a>
+    <div class="cmd-line reveal"><span class="user">tushar@dev</span>:<span class="path">~/projects</span>$ ls -la --sort=date | head -1</div>
+    <a class="feat-project reveal" href="Projects/AI_Job_Application_Agent/ai_job_application_agent.html">
+      <div class="icon">🤖</div>
+      <div class="body">
+        <span class="status-pill"><span class="dot"></span> in_progress</span>
+        <div class="fname">ai_job_application_agent</div>
+        <div class="meta">Aug 2026 — Present</div>
+        <p>Agentic system automating the end-to-end job application workflow: searches jobs, parses descriptions, matches candidate profile via RAG, generates tailored materials, and completes submissions through browser automation.</p>
+        <div class="feat-tag-row">
+          <span class="feat-tag">LangGraph</span><span class="feat-tag">RAG</span><span class="feat-tag">MCP</span><span class="feat-tag">FastAPI</span><span class="feat-tag">Playwright</span>
+        </div>
+      </div>
+    </a>
+    <div class="more-projects reveal">
+      <a class="btn btn-cmd" href="projects-b.html">▶ ls ~/projects/all</a>
+    </div>
+  </section>
+
+  <section id="certifications" class="wrap">
+    <div class="cmd-line reveal"><span class="user">tushar@dev</span>:<span class="path">~</span>$ cat certifications.log</div>
+    <div class="cert-grid reveal">
+      <a class="cert-item" href="https://drive.google.com/file/d/1N_TTzAPdIGA66aPEM9v4-C4urT3Y9o7c/view?usp=drivesdk" target="_blank" rel="noopener"><span class="name">AI Foundations for Everyone Specialization</span><span class="arrow">↗</span></a>
+      <a class="cert-item" href="https://drive.google.com/file/d/1VH9toIFNAVsSCukIACspaFZfCL8b6VLW/view?usp=drivesdk" target="_blank" rel="noopener"><span class="name">Applied Data Science Specialization</span><span class="arrow">↗</span></a>
+      <a class="cert-item" href="https://drive.google.com/file/d/1TG6ypZMNMCnAfie9booxk2GVhb2Wz4ll/view?usp=drivesdk" target="_blank" rel="noopener"><span class="name">Build Basic Generative Adversarial Networks (GANs)</span><span class="arrow">↗</span></a>
+      <a class="cert-item" href="https://drive.google.com/file/d/1_ymbxSqEj9iCz4WvHU0j9MAdZf7Mk1bu/view?usp=drivesdk" target="_blank" rel="noopener"><span class="name">Deep Learning Specialization</span><span class="arrow">↗</span></a>
+      <a class="cert-item" href="https://drive.google.com/file/d/1Urve4YIhS0evpLa-e-iU7ahYr2csY9GE/view?usp=drivesdk" target="_blank" rel="noopener"><span class="name">DeepLearning.AI TensorFlow Developer Specialization</span><span class="arrow">↗</span></a>
+      <a class="cert-item" href="https://drive.google.com/file/d/1Lh34_ZNGzIGv2GkvXt3ataPqaWDOQ_7r/view?usp=drivesdk" target="_blank" rel="noopener"><span class="name">IBM Applied AI Specialization</span><span class="arrow">↗</span></a>
+      <a class="cert-item" href="https://drive.google.com/file/d/1A50iIJ1PwnCndmc4TUnTSZnQNphvx2rS/view?usp=drivesdk" target="_blank" rel="noopener"><span class="name">IBM Data Science Specialization</span><span class="arrow">↗</span></a>
+      <a class="cert-item" href="https://drive.google.com/file/d/1n6lk2UfEiqGY_2Z2dIw2efLaR5lGeHJA/view?usp=drivesdk" target="_blank" rel="noopener"><span class="name">Introduction to Data Science Specialization</span><span class="arrow">↗</span></a>
+      <a class="cert-item" href="https://drive.google.com/file/d/1BObff5iku8Zd9Ap8q5Ds5pIXtxjBuTnp/view?usp=drivesdk" target="_blank" rel="noopener"><span class="name">Python for Everybody Specialization</span><span class="arrow">↗</span></a>
+      <a class="cert-item" href="https://drive.google.com/file/d/1i49aRcGNOMlAKZFpAzlLrPSO-reSuK4c/view?usp=drivesdk" target="_blank" rel="noopener"><span class="name">Reinforcement Learning Specialization</span><span class="arrow">↗</span></a>
+    </div>
+    <div class="more-certs reveal">
+      <a class="btn btn-cmd" href="links.html">▶ view all certifications</a>
     </div>
   </section>
 
@@ -316,7 +347,7 @@
   </section>
 
   <footer>
-    &copy; 2026 Tushar Supe — built from scratch, no frameworks. <a href="links.html">more links</a>
+    &copy; 2026 Tushar Supe. Vibe coded with Claude.
   </footer>
 
   <script>
