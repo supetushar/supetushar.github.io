@@ -22,10 +22,7 @@
   }
   .toolbar a.home{color:var(--sub); text-decoration:none; font-size:.9rem; font-weight:600;}
   .toolbar a.home:hover{color:var(--accent);}
-  .actions{display:flex; flex-direction:column; align-items:flex-end; gap:6px;}
-  .actions .row{display:flex; gap:10px;}
-  .print-hint{font-size:.72rem; color:var(--sub); text-align:right; max-width:320px; line-height:1.5;}
-  .print-hint b{color:var(--ink);}
+  .actions{display:flex; gap:10px;}
   .btn{
     padding:9px 18px; border-radius:9px; font-size:.85rem; font-weight:600; text-decoration:none;
     border:1px solid var(--line); color:var(--ink); background:#fff; transition:all .2s;
@@ -116,11 +113,8 @@
   <div class="toolbar">
     <a class="home" href="../../index.html">&larr; Back to site</a>
     <div class="actions">
-      <div class="row">
-        <a class="btn" href="./tushar_supe_resume_2026.pdf" target="_blank">Download PDF</a>
-        <a class="btn primary" href="#" onclick="window.print(); return false;">Print / Save as PDF</a>
-      </div>
-      <div class="print-hint">In the print dialog: Destination <b>Save as PDF</b>, Paper size <b>A3</b>, Margins <b>Custom</b>, Scale <b>117%</b>.</div>
+      <a class="btn" href="./tushar_supe_resume_2026.pdf" target="_blank">Download PDF</a>
+      <a class="btn primary" href="#" onclick="window.print(); return false;">Print / Save as PDF</a>
     </div>
   </div>
 
@@ -140,7 +134,7 @@
     <hr class="rule">
 
     <h2 class="sec">Professional Summary</h2>
-    <p class="summary">AI/ML and Backend engineer with 3+ years of experience building and operating production computer vision and applied AI systems for an AI-powered image platform serving automotive marketplaces across the United States, Canada, and India. Progressed from an individual contributor to a technical lead role, owning the full applied-AI lifecycle while managing a team of 4 AI and backend engineers. <b>Cut third-party inference costs by 75%+</b> and eliminated them entirely with in-house models, and reduced core API latency by over 99%.</p>
+    <p class="summary">AI/ML and backend engineer with 3+ years of experience building and operating production computer vision and applied AI systems for an AI-powered image platform serving automotive marketplaces across the United States, Canada, and India. Progressed from an individual contributor to a technical lead role, owning the full applied-AI lifecycle while managing a team of 4 AI and backend engineers. <b>Cut third-party inference costs by 75%+</b> and eliminated them entirely with in-house models, and reduced core API latency by over 99%.</p>
 
     <h2 class="sec">Work Experience</h2>
     <div class="job">
@@ -153,9 +147,9 @@
       <div class="role-cat">Computer Vision and Applied AI</div>
       <ul class="bullets">
         <li>Built an end-to-end virtual-studio car imaging pipeline: background removal, orientation and tilt correction, AI-generated shadow/reflection, license plate detection and anonymization, and studio-background placement, fusing <b>15+ production CV models</b> to output photorealistic images at 97&ndash;99.5% accuracy or IoU.</li>
-        <li>Scaled the imaging pipeline into a high-throughput production system processing ~250K+ images per month with 8&times; burst capacity, while <b>cutting per-image processing time by 70%</b> and pipeline memory footprint by over 95% through threading, caching, and alignment-logic optimization.</li>
+        <li>Scaled the imaging pipeline into a high-throughput production system processing ~250K+ images per month with 8&times; burst capacity, while <b>cutting per-image processing time by 70%</b> and pipeline memory footprint by over 95% through threading, caching, and pipeline optimization.</li>
         <li>Extended the imaging pipeline to bus imagery and shipped a thin-part detection model, <b>raising detection accuracy from 60% to 85%</b> while cutting inference latency by ~4&times; and container size by ~15&times; through model and runtime optimization (ONNX export, image slicing, custom post-processing).</li>
-        <li><b>Reduced model training compute cost by 75%</b> through GPU tier optimization and custom training pipeline improvements, and cut distributed-GPU training time from ~3 months to under a week through parallelization and pipeline redesign.</li>
+        <li><b>Reduced model training compute cost by 75%</b> through GPU tier optimization and custom training pipeline improvements, and cut distributed-GPU training time from ~3 months to under a week.</li>
         <li>Automated 3D synthetic-data generation (Blender, distributed multi-GPU rendering), <b>cutting a 450+ day rendering workload down to a week</b> and enabling continuous scaling of training data.</li>
         <li>Engineered an interactive 360-degree car spin generation pipeline from walkaround imagery, evaluating and applying multiple novel-view-synthesis and multi-view-geometry approaches spanning classical structure-from-motion, neural rendering, and video stabilization.</li>
         <li>Evaluated and prototyped generative-model approaches for background inpainting, reflection removal, and image harmonization, training custom models for each.</li>
@@ -185,8 +179,28 @@
         <div class="job-title">Maintenance Engineer, Graduate Engineer Trainee</div>
         <div class="job-date">2019 &ndash; 2020</div>
       </div>
-      <div class="job-org"><b>Reliance Industries Limited</b></div>
+      <div class="job-org"><b>Reliance Industries Limited</b> &ndash; Hazira, Gujarat</div>
       <p class="job-desc">Mechanical plant maintenance at a large-scale manufacturing facility.</p>
+    </div>
+
+    <h2 class="sec">Skills and Tools</h2>
+    <dl class="skills-grid">
+      <dt>Languages</dt><dd>Python, Bash/Shell, JavaScript</dd>
+      <dt>ML &amp; Computer Vision</dt><dd>Deep learning model development and training, distributed multi-GPU training (PyTorch, AMP/FP16), computer vision (segmentation, detection, classification, matting), object detection (YOLO-family), generative modeling (GANs, diffusion models, CNNs), inference acceleration (ONNX), synthetic data generation, OpenCV, scikit-learn, 3D reconstruction and novel view synthesis (COLMAP, GLOMAP, Gaussian Splatting, NeRF/NeRFStudio), multi-view geometry and feature matching (SIFT, SuperPoint, SuperGlue)</dd>
+      <dt>AI/LLM &amp; Agentic Systems</dt><dd>LLM APIs (Claude, OpenAI, Gemini), LangGraph, LangChain, Retrieval-Augmented Generation (RAG, Agentic RAG), multi-agent systems, tool calling, Model Context Protocol (MCP), AI avatar/voice/video generation pipelines</dd>
+      <dt>Cloud &amp; Infrastructure</dt><dd>AWS (EC2, S3, Lambda, SQS, CloudFront, SageMaker, Secrets Manager), GCP (Compute Engine, Cloud Run, Cloud Build, Cloud Tasks, Vertex AI), self-hosted GPU inference platforms, Docker, GitHub Actions, Nginx, Blender (bpy) for synthetic 3D data</dd>
+      <dt>Databases &amp; Backend</dt><dd>MongoDB, MongoDB Atlas, PostgreSQL, pgvector, Redis, FastAPI, schema design and indexing, REST API development, asynchronous task queues (Celery), backend service architecture</dd>
+      <dt>Automation &amp; Tooling</dt><dd>n8n, Playwright, webhooks, LangSmith</dd>
+      <dt>Practices</dt><dd>Git version control, code review, technical hiring and team leadership, mentorship, cost optimization and infrastructure governance, production incident response, CI/CD</dd>
+    </dl>
+
+    <h2 class="sec">Personal Projects</h2>
+    <div class="job">
+      <div class="job-top">
+        <div class="job-title">AI-Powered Job Application Agent</div>
+        <div class="job-date">August 2026 &ndash; Present</div>
+      </div>
+      <p class="job-desc">Agentic system automating the end-to-end job application workflow: searches jobs, parses job descriptions, matches them against a structured candidate profile, generates tailored application materials, and completes submission steps through browser automation. Building with LangGraph for agent orchestration, retrieval-augmented generation over candidate and job data, tool-calling and MCP integration, and a FastAPI/PostgreSQL backend with Playwright for browser automation.</p>
     </div>
 
     <h2 class="sec">Education</h2>
@@ -194,7 +208,6 @@
       <div class="edu-left">
         <b>Bachelor of Science, Programming and Data Science</b>
         <div>Indian Institute of Technology (IIT), Madras &middot; CGPA: 9.2/10</div>
-        <div>Coursework: Machine Learning, Deep Learning, Artificial Intelligence, Data Structures and Algorithms, Database Management Systems</div>
       </div>
       <div class="edu-date">2020 &ndash; 2023</div>
     </div>
@@ -206,22 +219,11 @@
       <div class="edu-date">2015 &ndash; 2019</div>
     </div>
 
-    <h2 class="sec">Personal Projects</h2>
-    <div class="job">
-      <div class="job-top"><div class="job-title">Automated Job Application Agent</div></div>
-      <p class="job-desc">Agentic system automating the end-to-end job search workflow: parses job descriptions, matches them against a structured candidate profile, generates tailored application materials, and completes submission steps through browser automation. Built with LangGraph/LangChain for agent orchestration, retrieval-augmented generation over candidate and job data, tool-calling and MCP integration, and a FastAPI/PostgreSQL/pgvector/Redis backend orchestrated with n8n and Playwright.</p>
-    </div>
-
-    <h2 class="sec">Skills and Tools</h2>
-    <dl class="skills-grid">
-      <dt>Languages</dt><dd>Python, Bash/Shell, JavaScript</dd>
-      <dt>ML &amp; Computer Vision</dt><dd>Deep learning model development and training, distributed multi-GPU training (PyTorch, AMP/FP16), computer vision (segmentation, detection, classification, matting), object detection (YOLO-family), generative modeling (GANs, diffusion models, CNNs), inference acceleration (ONNX), synthetic data generation, OpenCV, scikit-learn, 3D reconstruction and novel view synthesis (COLMAP, GLOMAP, Gaussian Splatting, NeRF/NeRFStudio), multi-view geometry and feature matching (SIFT, SuperPoint, SuperGlue)</dd>
-      <dt>AI/LLM &amp; Agentic Systems</dt><dd>LLM APIs (Claude, OpenAI, Gemini), LangGraph, LangChain, Retrieval-Augmented Generation (RAG, Agentic RAG), multi-agent systems, tool calling, Model Context Protocol (MCP), AI avatar/voice/video generation pipelines</dd>
-      <dt>Cloud &amp; Infrastructure</dt><dd>AWS (EC2, S3, Lambda, SQS, CloudFront, SageMaker, Secrets Manager), GCP (Compute Engine, Cloud Run, Cloud Build, Cloud Tasks, Vertex AI), self-hosted GPU inference platforms, Docker, GitHub Actions, Nginx, Blender (bpy) for synthetic 3D data</dd>
-      <dt>Databases &amp; Backend</dt><dd>MongoDB, MongoDB Atlas, PostgreSQL, pgvector, Redis, FastAPI, schema design and indexing, REST API development, asynchronous task queues (Celery), backend service architecture</dd>
-      <dt>Automation &amp; Tooling</dt><dd>n8n, Playwright, webhooks, LangSmith (observability)</dd>
-      <dt>Practices</dt><dd>Git version control, code review, technical hiring and team leadership, mentorship, cost optimization and infrastructure governance, production incident response, CI/CD</dd>
-    </dl>
+    <h2 class="sec">Extra Curricular Activities</h2>
+    <ul class="bullets">
+      <li>Completed multiple specializations through Coursera in Data Science, Applied AI, Deep Learning, and Reinforcement Learning, including programs from IBM and DeepLearning.AI.</li>
+      <li>Trained an ML model to predict IPL powerplay scores for the IIT Madras Cricket Hackathon 2023, ranking among the top 20 on the leaderboard.</li>
+    </ul>
   </div>
 
 </body>
