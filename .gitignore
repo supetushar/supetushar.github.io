@@ -29,3 +29,8 @@ pnpm-debug.log*
 *.log
 
 todo.md
+
+# Large unused binaries - kept locally, never pushed (bloats GitHub Pages deploys)
+_bk/
+Projects/gan_digits_mnist/gans_training.avi
+Projects/gan_anime_faces/gans_training_100.avi
