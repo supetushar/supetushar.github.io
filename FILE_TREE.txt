@@ -1,0 +1,126 @@
+supetushar.github.io — Repository File Tree
+=============================================
+Last updated: 2026-10-06
+
+Update this file whenever files/folders are added, removed, or restructured.
+
+HOW THE SITE IS ORGANIZED
+--------------------------
+- Root index.html = a generated copy of whichever theme is "live" (currently theme-d).
+  Regenerate it any time with: ./switch-theme.ps1 <A|B|C|D>
+- Each theme-X/ folder is self-contained: its own index.html, links.html, projects.html,
+  and Projects/<name>/<page>.html, all styled to match that theme and using paths
+  relative to that folder.
+- Shared, non-themed resources live at the repo root and are referenced by every theme
+  via relative paths ("../"): images/, assets/ (fonts, legacy main.css/project.css, JS),
+  Projects/<name>/ media files (thumbnails, screenshots, videos), and Projects/Resume/
+  (resume HTML + PDF — identical across all themes, never duplicated per-theme).
+- The original un-suffixed Projects/<name>/<page>.html files (aurora-styled, using the
+  shared assets/css/project.css) are legacy/orphaned — no theme links to them anymore,
+  kept only because they still work standalone if someone has them bookmarked.
+
+.
+├── .gitignore
+├── FILE_TREE.txt                  <- this file
+├── IMPORTANT.txt
+├── LICENSE.txt
+├── README.txt
+├── index.html                     <- LIVE site (generated; see switch-theme.ps1)
+├── links.html                     <- legacy/orphaned, no theme links here anymore
+├── project.html                   <- legacy template, unused
+├── switch-theme.ps1                <- regenerates root index.html from a theme folder
+├── todo.md                        <- personal notes, not site content
+├── personal qr code.png
+│
+├── Articles/
+│   └── Articles.txt
+│
+├── images/                        <- SHARED across all themes
+│   ├── avatar.jpg
+│   └── banner.jpg
+│
+├── assets/                        <- SHARED across all themes
+│   ├── css/
+│   │   ├── main.css               <- legacy (pre-redesign) site styling, unused by themes
+│   │   ├── project.css            <- legacy project-page styling (aurora look), unused by themes
+│   │   ├── fontawesome-all.min.css
+│   │   ├── noscript.css
+│   │   └── images/ (ie/, overlay.png, intro.svg)
+│   ├── js/                        <- jQuery + legacy template scripts, unused by themes
+│   ├── sass/                      <- legacy template source, unused by themes
+│   └── webfonts/                  <- Font Awesome webfonts, unused by themes
+│
+├── Projects/                      <- SHARED media + legacy pages; per-theme pages live in theme-X/Projects/
+│   ├── Projects.txt
+│   ├── AI_Job_Application_Agent/
+│   │   └── ai_job_application_agent.html   (legacy/orphaned copy)
+│   ├── CNN_Object_Classify_Localize/
+│   │   ├── cnn_object_classify_and_localize.html  (legacy/orphaned)
+│   │   └── cnn_object_classify_and_localize_thumbnail.png
+│   ├── Coding_Puzzles/
+│   │   ├── coding_puzzles.html     (legacy/orphaned)
+│   │   ├── coding_puzzles_thumbnail.png
+│   │   └── *.png, logo.gif, logo.jpg   (screenshots/diagrams, shared)
+│   ├── FlashCards/
+│   │   ├── flashcards.html         (legacy/orphaned)
+│   │   ├── flashcards_thumbnail.png
+│   │   └── *.png                   (screenshots, shared)
+│   ├── GAN_Anime_Faces/
+│   │   ├── gan_anime_faces.html    (legacy/orphaned)
+│   │   ├── gan_anime_faces_thumbnail.png
+│   │   └── gans_training_100.avi
+│   ├── GAN_Digits_MNIST/
+│   │   ├── gan_digits_mnist.html   (legacy/orphaned)
+│   │   ├── gan_digits_mnist_thumbnail.png
+│   │   └── gans_training.avi
+│   ├── OSTS_SE/
+│   │   ├── osts_se.html            (legacy/orphaned)
+│   │   ├── osts_se_thumbnail.png
+│   │   └── osts_se_thumbnail_ytd.png
+│   ├── Save_The_Pod_PyGame/
+│   │   ├── save_the_pod_pygame.html (legacy/orphaned)
+│   │   ├── save_the_pod_pygame_thumbnail.png
+│   │   └── demo_thumbnail.png
+│   └── Resume/                    <- SHARED, identical across every theme, NEVER duplicated
+│       ├── resume_page.html
+│       ├── tushar_supe_resume_2026.html
+│       └── tushar_supe_resume_2026.pdf
+│
+├── theme-a/                       <- "Aurora Grid" (dark, glowing purple/cyan gradients)
+│   ├── index.html
+│   ├── links.html
+│   ├── projects.html
+│   ├── assets/css/project.css
+│   └── Projects/
+│       ├── AI_Job_Application_Agent/ai_job_application_agent.html
+│       ├── CNN_Object_Classify_Localize/cnn_object_classify_and_localize.html
+│       ├── Coding_Puzzles/coding_puzzles.html
+│       ├── FlashCards/flashcards.html
+│       ├── GAN_Anime_Faces/gan_anime_faces.html
+│       ├── GAN_Digits_MNIST/gan_digits_mnist.html
+│       ├── OSTS_SE/osts_se.html
+│       └── Save_The_Pod_PyGame/save_the_pod_pygame.html
+│
+├── theme-b/                       <- "Terminal / Dev Console" (dark, monospace, green/cyan/amber)
+│   └── (same shape as theme-a/)
+│
+├── theme-c/                       <- "Glassmorphic Mesh" (light/dark-adaptive, violet/pink/blue)
+│   └── (same shape as theme-a/)
+│
+└── theme-d/                       <- "Cobalt Dark" (starfield, cobalt accent, skills/timeline) — CURRENTLY LIVE
+    └── (same shape as theme-a/)
+
+NOT TRACKED HERE
+-----------------
+- backup_v1.zip / backup_v1/  — pre-redesign site backup, explicitly excluded from all work.
+- .git/
+
+MAINTENANCE NOTES
+-------------------
+- Adding a new personal project: add its media to Projects/<Name>/, then create a themed
+  page at theme-a/Projects/<Name>/<page>.html (and b/c/d), linking the shared media via
+  "../../../Projects/<Name>/..." and the theme's own stylesheet via "../../assets/css/project.css".
+  Add a tile to each theme-X/projects.html pointing at "Projects/<Name>/<page>.html" (theme-local).
+- Updating the resume: edit only Projects/Resume/ — every theme already points there, no
+  per-theme duplication needed.
+- Switching the live theme: run ./switch-theme.ps1 <A|B|C|D> from the repo root.

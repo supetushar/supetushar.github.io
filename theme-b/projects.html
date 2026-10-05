@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Projects — Tushar Supe</title>
+<meta name="description" content="All projects by Tushar Supe, sorted by date.">
+<link rel="icon" type="image/x-icon" href="../images/avatar.jpg">
+<style>
+  :root{
+    --bg:#08090c; --fg:#d4d8dd; --green:#3ddc97; --amber:#ffb454; --cyan:#5ec8ff; --pink:#ff6ac1;
+    --card:#0f1115; --border:#22262e; --muted:#6b7280;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg); color:var(--fg); font-family:'Cascadia Code','Consolas',monospace; line-height:1.6;}
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+
+  .crt-glow{position:fixed; inset:0; pointer-events:none; z-index:1;
+    background:radial-gradient(ellipse 70% 50% at 50% 0%, rgba(61,220,151,.07), transparent 60%);}
+
+  .wrap{max-width:900px; margin:0 auto; padding:0 6vw; position:relative; z-index:5;}
+
+  nav{position:sticky; top:0; z-index:50; display:flex; justify-content:space-between; align-items:center;
+    padding:20px 6vw; border-bottom:1px solid var(--border); background:rgba(8,9,12,.85); backdrop-filter:blur(10px);}
+  .logo{font-weight:700; color:var(--green); text-decoration:none;}
+  .logo::before{content:'~/'; color:var(--muted);}
+  .back-link{color:var(--muted); text-decoration:none; font-size:.85rem;}
+  .back-link:hover{color:var(--cyan);}
+
+  .hero{padding:60px 6vw 30px; max-width:900px; margin:0 auto; position:relative; z-index:5;}
+  .cmd-line{color:var(--muted); font-size:.85rem; margin-bottom:18px;}
+  .cmd-line .user{color:var(--green);} .cmd-line .path{color:var(--cyan);}
+  h1{font-size:clamp(1.8rem,5vw,2.8rem); font-weight:700; margin-bottom:12px;}
+  h1 .brack{color:var(--muted);}
+  .hero p{color:var(--fg); opacity:.8; font-size:.92rem; max-width:600px;}
+
+  section.listing{padding:20px 0 80px; position:relative; z-index:5;}
+
+  .tile{
+    display:flex; gap:24px; border:1px solid var(--border); border-radius:10px; background:var(--card);
+    overflow:hidden; text-decoration:none; margin-bottom:18px; transition:border-color .2s, transform .2s;
+  }
+  .tile:hover{border-color:var(--green); transform:translateX(4px);}
+  .tile .thumb{flex:0 0 220px; overflow:hidden; background:#14161b;}
+  .tile .thumb img{width:100%; height:100%; object-fit:cover;}
+  .tile .body{flex:1; padding:22px 24px; min-width:0;}
+  .tile-top{display:flex; justify-content:space-between; align-items:flex-start; gap:10px; flex-wrap:wrap;}
+  .fname{color:var(--cyan); font-size:1rem; font-weight:700;}
+  .fname::before{content:'📄 ';}
+  .tile-date{color:var(--amber); font-size:.76rem; white-space:nowrap;}
+  .tile p.desc{color:var(--muted); font-size:.82rem; margin:10px 0 12px; line-height:1.6;}
+  .tag-row{display:flex; flex-wrap:wrap; gap:7px;}
+  .tag{font-size:.72rem; color:var(--cyan); border:1px solid var(--border); padding:3px 10px; border-radius:6px; background:#0d1a17;}
+
+  .tile.featured{border-color:rgba(61,220,151,.4);}
+  .tile.featured .thumb{background:#0d1a17; display:flex; align-items:center; justify-content:center; font-size:2.4rem;}
+  .status-pill{display:inline-flex; align-items:center; gap:6px; font-size:.7rem; font-weight:700; color:var(--green); margin-bottom:6px;}
+  .status-pill .dot{width:6px; height:6px; border-radius:50%; background:var(--green); box-shadow:0 0 6px var(--green);}
+
+  footer{text-align:center; padding:36px 6vw; color:var(--muted); font-size:.8rem; border-top:1px solid var(--border); position:relative; z-index:5;}
+  footer a{color:var(--muted); text-decoration:none;}
+  footer a:hover{color:var(--cyan);}
+
+  @media (max-width:700px){
+    .tile{flex-direction:column;}
+    .tile .thumb{flex:0 0 160px; width:100%;}
+  }
+</style>
+</head>
+<body>
+  <div class="crt-glow"></div>
+
+  <nav>
+    <a class="logo" href="index.html">tushar-supe</a>
+    <a class="back-link" href="index.html#projects">&larr; cd ~</a>
+  </nav>
+
+  <section class="hero">
+    <div class="cmd-line"><span class="user">tushar@dev</span>:<span class="path">~/projects</span>$ ls -la --sort=date</div>
+    <h1><span class="brack">&gt;</span> All Projects</h1>
+    <p>Everything I've built, sorted by date — from an ongoing agentic AI system to earlier college and personal projects.</p>
+  </section>
+
+  <section class="listing wrap">
+
+    <a class="tile featured" href="Projects/AI_Job_Application_Agent/ai_job_application_agent.html">
+      <div class="thumb">🤖</div>
+      <div class="body">
+        <span class="status-pill"><span class="dot"></span> in_progress</span>
+        <div class="tile-top">
+          <div class="fname">ai_job_application_agent</div>
+          <span class="tile-date">Aug 2026 — Present</span>
+        </div>
+        <p class="desc">Agentic system automating the end-to-end job application workflow: searches jobs, parses descriptions, matches candidate profile via RAG, generates tailored materials, and completes submissions through browser automation.</p>
+        <div class="tag-row">
+          <span class="tag">LangGraph</span><span class="tag">RAG</span><span class="tag">MCP</span><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">Playwright</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="tile" href="Projects/OSTS_SE/osts_se.html">
+      <div class="thumb"><img src="../Projects/OSTS_SE/osts_se_thumbnail.png" alt="Online Support Ticket System"></div>
+      <div class="body">
+        <div class="tile-top">
+          <div class="fname">online_support_ticket_system</div>
+          <span class="tile-date">2023</span>
+        </div>
+        <p class="desc">Full-stack support ticketing web app built for the IITM BSc Software Engineering course — ticket creation, duplicate detection, resolution workflow, and an FAQ pipeline.</p>
+        <div class="tag-row">
+          <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">SQLite</span><span class="tag">Swagger</span><span class="tag">API</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="tile" href="Projects/FlashCards/flashcards.html">
+      <div class="thumb"><img src="../Projects/FlashCards/flashcards_thumbnail.png" alt="Flash-Cards Web App"></div>
+      <div class="body">
+        <div class="tile-top">
+          <div class="fname">flashcards</div>
+          <span class="tile-date">2023</span>
+        </div>
+        <p class="desc">Spaced-repetition study tool with deck/card management, built as a modern full-stack application with an async task queue.</p>
+        <div class="tag-row">
+          <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">Vue</span><span class="tag">Celery</span><span class="tag">Redis</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="tile" href="Projects/Coding_Puzzles/coding_puzzles.html">
+      <div class="thumb"><img src="../Projects/Coding_Puzzles/coding_puzzles_thumbnail.png" alt="Coding Puzzles Android App"></div>
+      <div class="body">
+        <div class="tile-top">
+          <div class="fname">coding_puzzles</div>
+          <span class="tile-date">2022</span>
+        </div>
+        <p class="desc">Android mobile app for practicing coding puzzles, with user accounts and progress tracking backed by a NoSQL database.</p>
+        <div class="tag-row">
+          <span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Firebase</span><span class="tag">Android Studio</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="tile" href="Projects/Save_The_Pod_PyGame/save_the_pod_pygame.html">
+      <div class="thumb"><img src="../Projects/Save_The_Pod_PyGame/save_the_pod_pygame_thumbnail.png" alt="Save The Pod Python Game"></div>
+      <div class="body">
+        <div class="tile-top">
+          <div class="fname">save_the_pod_pygame</div>
+          <span class="tile-date">2022</span>
+        </div>
+        <p class="desc">2D arcade-style game built with PyGame as an object-oriented programming exercise for the IITM Software Engineering course.</p>
+        <div class="tag-row">
+          <span class="tag">Python</span><span class="tag">PyGame</span><span class="tag">OOP</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="tile" href="Projects/GAN_Digits_MNIST/gan_digits_mnist.html">
+      <div class="thumb"><img src="../Projects/GAN_Digits_MNIST/gan_digits_mnist_thumbnail.png" alt="DCGAN Digits MNIST"></div>
+      <div class="body">
+        <div class="tile-top">
+          <div class="fname">gan_digits_mnist</div>
+          <span class="tile-date">2021</span>
+        </div>
+        <p class="desc">A deep convolutional generative adversarial network trained to generate new handwritten digit images from the MNIST dataset.</p>
+        <div class="tag-row">
+          <span class="tag">Deep Learning</span><span class="tag">GAN</span><span class="tag">DCGAN</span><span class="tag">CNN</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="tile" href="Projects/GAN_Anime_Faces/gan_anime_faces.html">
+      <div class="thumb"><img src="../Projects/GAN_Anime_Faces/gan_anime_faces_thumbnail.png" alt="DCGAN Anime Faces"></div>
+      <div class="body">
+        <div class="tile-top">
+          <div class="fname">gan_anime_faces</div>
+          <span class="tile-date">2021</span>
+        </div>
+        <p class="desc">A deep convolutional generative adversarial network trained to generate new anime-style face images.</p>
+        <div class="tag-row">
+          <span class="tag">Deep Learning</span><span class="tag">GAN</span><span class="tag">DCGAN</span><span class="tag">CNN</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="tile" href="Projects/CNN_Object_Classify_Localize/cnn_object_classify_and_localize.html">
+      <div class="thumb"><img src="../Projects/CNN_Object_Classify_Localize/cnn_object_classify_and_localize_thumbnail.png" alt="CNN Object Classification and Localization"></div>
+      <div class="body">
+        <div class="tile-top">
+          <div class="fname">cnn_object_classify_and_localize</div>
+          <span class="tile-date">2021</span>
+        </div>
+        <p class="desc">Convolutional neural network for joint object classification and bounding-box localization, built with TensorFlow.</p>
+        <div class="tag-row">
+          <span class="tag">Python</span><span class="tag">CNN</span><span class="tag">TensorFlow</span><span class="tag">Classification</span>
+        </div>
+      </div>
+    </a>
+
+  </section>
+
+  <footer>
+    &copy; 2026 Tushar Supe. Vibe coded with Claude.
+  </footer>
+</body>
+</html>
