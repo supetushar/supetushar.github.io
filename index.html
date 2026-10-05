@@ -20,15 +20,20 @@ body[data-theme="c"] #theme-c-root{display:block;}
 body[data-theme="d"] #theme-d-root{display:block;}
 
 
-.corner-mark{
-  position:fixed; bottom:8px; right:8px; width:18px; height:18px;
-  padding:6px; box-sizing:content-box; display:block; cursor:default;
-  z-index:9999; -webkit-tap-highlight-color:transparent;
+.theme-switch-btn{
+  position:fixed; bottom:18px; right:18px; width:40px; height:40px;
+  display:flex; align-items:center; justify-content:center;
+  border-radius:50%; border:1px solid rgba(128,128,128,.35);
+  background:rgba(20,20,30,.55); backdrop-filter:blur(8px);
+  color:#e8eaf0; cursor:pointer; z-index:9999;
+  -webkit-tap-highlight-color:transparent;
+  transition:transform .2s ease, border-color .2s ease, background .2s ease;
 }
-.corner-mark::before{
-  content:''; display:block; width:4px; height:4px; border-radius:50%;
-  background:currentColor; opacity:.12;
+.theme-switch-btn:hover{
+  transform:translateY(-2px); border-color:rgba(160,160,255,.6);
+  background:rgba(30,30,45,.7);
 }
+.theme-switch-btn svg{ width:18px; height:18px; display:block; }
 
 
   /* ===== THEME A ===== */
@@ -744,12 +749,12 @@ body[data-theme="d"]{
     <div class="navwrap">
       <div class="logo">Tushar<span>.dev</span></div>
       <ul>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#certifications">Certifications</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="#experience-a">Experience</a></li>
+        <li><a href="#projects-a">Projects</a></li>
+        <li><a href="#certifications-a">Certifications</a></li>
+        <li><a href="#about-a">About</a></li>
         <li><a href="Projects/Resume/tushar_supe_resume_2026.html">Resume</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact-a">Contact</a></li>
       </ul>
     </div>
   </nav>
@@ -760,7 +765,7 @@ body[data-theme="d"]{
     <p class="subtitle">AI/ML Engineer crafting production computer-vision pipelines and infrastructure for AI visual merchandising software serving automotive marketplaces across the US, Canada &amp; India.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="Projects/Resume/tushar_supe_resume_2026.html">View Resume</a>
-      <a class="btn btn-ghost" href="#experience">See My Work</a>
+      <a class="btn btn-ghost" href="#experience-a">See My Work</a>
     </div>
     <div class="socials">
       <a href="mailto:tusharsupe2311@gmail.com" title="Email">✉</a>
@@ -779,7 +784,7 @@ body[data-theme="d"]{
     </div>
   </div>
 
-  <section id="experience" class="wrap">
+  <section id="experience-a" class="wrap">
     <div class="section-head reveal">
       <div class="tag">Career</div>
       <h2>Professional Experience</h2>
@@ -838,7 +843,7 @@ body[data-theme="d"]{
     </div>
   </section>
 
-  <section id="projects" class="wrap">
+  <section id="projects-a" class="wrap">
     <div class="section-head reveal">
       <div class="tag">Currently Building</div>
       <h2>Projects</h2>
@@ -860,7 +865,7 @@ body[data-theme="d"]{
     </div>
   </section>
 
-  <section id="certifications" class="wrap">
+  <section id="certifications-a" class="wrap">
     <div class="section-head reveal">
       <div class="tag">Credentials</div>
       <h2>Certifications</h2>
@@ -879,7 +884,7 @@ body[data-theme="d"]{
     </div>
   </section>
 
-  <section id="about" class="wrap">
+  <section id="about-a" class="wrap">
     <div class="section-head reveal">
       <div class="tag">Background</div>
       <h2>About &amp; Education</h2>
@@ -905,7 +910,7 @@ body[data-theme="d"]{
     </div>
   </section>
 
-  <section id="contact" class="wrap">
+  <section id="contact-a" class="wrap">
     <div class="split reveal">
       <div class="panel">
         <h3>📄 Resume</h3>
@@ -938,12 +943,12 @@ body[data-theme="d"]{
   <nav>
     <div class="logo">tushar-supe</div>
     <ul>
-      <li><a href="#experience">experience</a></li>
-      <li><a href="#projects">projects</a></li>
-      <li><a href="#certifications">certifications</a></li>
-      <li><a href="#about">about</a></li>
+      <li><a href="#experience-b">experience</a></li>
+      <li><a href="#projects-b">projects</a></li>
+      <li><a href="#certifications-b">certifications</a></li>
+      <li><a href="#about-b">about</a></li>
       <li><a href="Projects/Resume/tushar_supe_resume_2026.html">resume</a></li>
-      <li><a href="#contact">contact</a></li>
+      <li><a href="#contact-b">contact</a></li>
     </ul>
   </nav>
 
@@ -965,7 +970,7 @@ body[data-theme="d"]{
       </div>
       <div class="btn-row">
         <a class="btn btn-run" href="Projects/Resume/tushar_supe_resume_2026.html">▶ run resume.html</a>
-        <a class="btn btn-cmd" href="#projects">cat projects/</a>
+        <a class="btn btn-cmd" href="#projects-b">cat projects/</a>
       </div>
       <div class="stats-line">
         <div><b>3+ yrs</b>production AI</div>
@@ -976,7 +981,7 @@ body[data-theme="d"]{
     </div>
   </div>
 
-  <section id="experience" class="wrap">
+  <section id="experience-b" class="wrap">
     <div class="cmd-line reveal"><span class="user">tushar@dev</span>:<span class="path">~</span>$ cat experience.log</div>
     <div class="exp-block reveal">
       <div class="exp-top">
@@ -1028,7 +1033,7 @@ body[data-theme="d"]{
     </div>
   </section>
 
-  <section id="projects" class="wrap">
+  <section id="projects-b" class="wrap">
     <div class="cmd-line reveal"><span class="user">tushar@dev</span>:<span class="path">~/projects</span>$ ls -la --sort=date | head -1</div>
     <a class="feat-project reveal" href="Projects/ai_job_application_agent/ai_job_application_agent.html">
       <div class="icon">🤖</div>
@@ -1047,7 +1052,7 @@ body[data-theme="d"]{
     </div>
   </section>
 
-  <section id="certifications" class="wrap">
+  <section id="certifications-b" class="wrap">
     <div class="cmd-line reveal"><span class="user">tushar@dev</span>:<span class="path">~</span>$ cat certifications.log</div>
     <div class="cert-grid reveal">
       <a class="cert-item" href="https://drive.google.com/file/d/1VH9toIFNAVsSCukIACspaFZfCL8b6VLW/view?usp=drivesdk" target="_blank" rel="noopener"><span class="name">Applied Data Science Specialization</span><span class="arrow">↗</span></a>
@@ -1062,7 +1067,7 @@ body[data-theme="d"]{
     </div>
   </section>
 
-  <section id="about" class="wrap">
+  <section id="about-b" class="wrap">
     <div class="cmd-line reveal"><span class="user">tushar@dev</span>:<span class="path">~</span>$ cat about.md</div>
     <div class="about-grid reveal">
       <div class="about-text">
@@ -1085,7 +1090,7 @@ body[data-theme="d"]{
     </div>
   </section>
 
-  <section id="contact" class="wrap">
+  <section id="contact-b" class="wrap">
     <div class="split reveal">
       <div class="panel">
         <h3>open resume.html</h3>
@@ -1118,13 +1123,13 @@ body[data-theme="d"]{
   <nav><div class="navwrap">
     <div class="logo">Tushar Supe</div>
     <ul>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#certifications">Certifications</a></li>
-      <li><a href="#about">About</a></li>
+      <li><a href="#experience-c">Experience</a></li>
+      <li><a href="#projects-c">Projects</a></li>
+      <li><a href="#certifications-c">Certifications</a></li>
+      <li><a href="#about-c">About</a></li>
       <li><a href="Projects/Resume/tushar_supe_resume_2026.html">Resume</a></li>
     </ul>
-    <a class="nav-cta" href="#contact">Contact</a>
+    <a class="nav-cta" href="#contact-c">Contact</a>
   </div></nav>
 
   <section class="hero">
@@ -1136,7 +1141,7 @@ body[data-theme="d"]{
     <p class="sub">I build production computer-vision pipelines and scalable backend systems for AI visual merchandising software at an automotive-focused startup.</p>
     <div class="cta">
       <a class="btn btn-fill" href="Projects/Resume/tushar_supe_resume_2026.html">📄 View Resume</a>
-      <a class="btn btn-glass" href="#experience">💼 See My Work</a>
+      <a class="btn btn-glass" href="#experience-c">💼 See My Work</a>
     </div>
     <div class="stats reveal">
       <div class="stat"><div class="num">3+</div><div class="label">Years in Production AI</div></div>
@@ -1146,7 +1151,7 @@ body[data-theme="d"]{
     </div>
   </section>
 
-  <section id="experience" class="wrap">
+  <section id="experience-c" class="wrap">
     <div class="section-head reveal">
       <div class="tag">Career</div>
       <h2>Professional Experience</h2>
@@ -1202,7 +1207,7 @@ body[data-theme="d"]{
     </div>
   </section>
 
-  <section id="projects" class="wrap">
+  <section id="projects-c" class="wrap">
     <div class="section-head reveal">
       <div class="tag">Currently Building</div>
       <h2>Projects</h2>
@@ -1224,7 +1229,7 @@ body[data-theme="d"]{
     </div>
   </section>
 
-  <section id="certifications" class="wrap">
+  <section id="certifications-c" class="wrap">
     <div class="section-head reveal">
       <div class="tag">Credentials</div>
       <h2>Certifications</h2>
@@ -1243,7 +1248,7 @@ body[data-theme="d"]{
     </div>
   </section>
 
-  <section id="about" class="wrap">
+  <section id="about-c" class="wrap">
     <div class="section-head reveal">
       <div class="tag">Background</div>
       <h2>About &amp; Education</h2>
@@ -1269,7 +1274,7 @@ body[data-theme="d"]{
     </div>
   </section>
 
-  <section id="contact" class="wrap">
+  <section id="contact-c" class="wrap">
     <div class="split reveal">
       <div class="panel">
         <h3>📄 Resume</h3>
@@ -1304,10 +1309,12 @@ body[data-theme="d"]{
     <div class="navpill">
       <div class="brand"><span class="dot"></span>TUSHAR.AI</div>
       <ul>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#skills">Stack</a></li>
-        <li><a href="#projects">Work</a></li>
-        <li><a href="#certifications">Certs</a></li>
+        <li><a href="#experience-d">Experience</a></li>
+        <li><a href="#skills-d">Stack</a></li>
+        <li><a href="#projects-d">Work</a></li>
+        <li><a href="#certifications-d">Certs</a></li>
+        <li><a href="#about-d">About</a></li>
+        <li><a href="#contact-d">Contact</a></li>
         <li><a href="Projects/Resume/tushar_supe_resume_2026.html">Resume</a></li>
       </ul>
     </div>
@@ -1333,7 +1340,7 @@ body[data-theme="d"]{
     </div>
   </section>
 
-  <section id="experience" class="wrap">
+  <section id="experience-d" class="wrap">
     <div class="section-head reveal">
       <div class="eyebrow">// career</div>
       <h2>Experience Log</h2>
@@ -1390,7 +1397,7 @@ body[data-theme="d"]{
     </div>
   </section>
 
-  <section id="skills" class="wrap">
+  <section id="skills-d" class="wrap">
     <div class="section-head reveal">
       <div class="eyebrow">// stack</div>
       <h2>Technical Stack</h2>
@@ -1520,7 +1527,7 @@ body[data-theme="d"]{
     </div>
   </section>
 
-  <section id="projects" class="wrap">
+  <section id="projects-d" class="wrap">
     <div class="section-head reveal">
       <div class="eyebrow">// currently building</div>
       <h2>Projects</h2>
@@ -1542,7 +1549,7 @@ body[data-theme="d"]{
     </div>
   </section>
 
-  <section id="certifications" class="wrap">
+  <section id="certifications-d" class="wrap">
     <div class="section-head reveal">
       <div class="eyebrow">// credentials</div>
       <h2>Certifications</h2>
@@ -1561,7 +1568,7 @@ body[data-theme="d"]{
     </div>
   </section>
 
-  <section id="about" class="wrap">
+  <section id="about-d" class="wrap">
     <div class="section-head reveal">
       <div class="eyebrow">// background</div>
       <h2>About &amp; Education</h2>
@@ -1587,7 +1594,7 @@ body[data-theme="d"]{
     </div>
   </section>
 
-  <section id="contact" class="wrap">
+  <section id="contact-d" class="wrap">
     <div class="split reveal">
       <div class="panel">
         <h3>📄 Resume</h3>
@@ -1618,7 +1625,15 @@ body[data-theme="d"]{
   </footer>
 </div>
 
-<span class="corner-mark" aria-hidden="true" onclick="switchTheme()"></span>
+<button class="theme-switch-btn" type="button" title="Switch theme" onclick="switchTheme()">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="13.5" cy="6.5" r="1.3" fill="currentColor" stroke="none"/>
+    <circle cx="17.5" cy="10.5" r="1.3" fill="currentColor" stroke="none"/>
+    <circle cx="8.5" cy="7.5" r="1.3" fill="currentColor" stroke="none"/>
+    <circle cx="6.5" cy="12.5" r="1.3" fill="currentColor" stroke="none"/>
+    <path d="M12 2a10 10 0 1 0 10 10c0-1-1-2-2.5-2h-3a2.5 2.5 0 0 1 0-5H18a2 2 0 0 0 2-2c0-1.8-3.6-3-8-3z"/>
+  </svg>
+</button>
 
 <script>
     const els = document.querySelectorAll('.reveal');

@@ -7,15 +7,20 @@
 <link rel="icon" type="image/x-icon" href="../../images/avatar.jpg">
 <style>
 
-.corner-mark{
-  position:fixed; bottom:8px; right:8px; width:18px; height:18px;
-  padding:6px; box-sizing:content-box; display:block; cursor:default;
-  z-index:9999; -webkit-tap-highlight-color:transparent;
+.theme-switch-btn{
+  position:fixed; bottom:18px; right:18px; width:40px; height:40px;
+  display:flex; align-items:center; justify-content:center;
+  border-radius:50%; border:1px solid rgba(128,128,128,.35);
+  background:rgba(20,20,30,.55); backdrop-filter:blur(8px);
+  color:#e8eaf0; cursor:pointer; z-index:9999;
+  -webkit-tap-highlight-color:transparent;
+  transition:transform .2s ease, border-color .2s ease, background .2s ease;
 }
-.corner-mark::before{
-  content:''; display:block; width:4px; height:4px; border-radius:50%;
-  background:currentColor; opacity:.12;
+.theme-switch-btn:hover{
+  transform:translateY(-2px); border-color:rgba(160,160,255,.6);
+  background:rgba(30,30,45,.7);
 }
+.theme-switch-btn svg{ width:18px; height:18px; display:block; }
 
 
 /* ===== THEME A ===== */
@@ -75,7 +80,7 @@ body[data-theme="a"] *{box-sizing:border-box;}
 
   body[data-theme="a"] .role-cat{font-weight:700; font-size:.87rem; margin:14px 0 6px; color:var(--ink);}
   body[data-theme="a"] ul.bullets{margin:0 0 4px; padding-left:20px;}
-  body[data-theme="a"] ul.bullets li{font-size:.89rem; color:#2b2e37; margin-bottom:6px;}
+  body[data-theme="a"] ul.bullets li{font-size:.89rem; color:var(--sub); margin-bottom:6px;}
   body[data-theme="a"] ul.bullets li::marker{color:var(--accent);}
   body[data-theme="a"] ul.bullets li b{color:var(--ink);}
 
@@ -179,7 +184,7 @@ body[data-theme="b"] *{box-sizing:border-box;}
 
   body[data-theme="b"] .role-cat{font-weight:700; font-size:.87rem; margin:14px 0 6px; color:var(--ink);}
   body[data-theme="b"] ul.bullets{margin:0 0 4px; padding-left:20px;}
-  body[data-theme="b"] ul.bullets li{font-size:.89rem; color:#2b2e37; margin-bottom:6px;}
+  body[data-theme="b"] ul.bullets li{font-size:.89rem; color:var(--sub); margin-bottom:6px;}
   body[data-theme="b"] ul.bullets li::marker{color:var(--accent);}
   body[data-theme="b"] ul.bullets li b{color:var(--ink);}
 
@@ -283,7 +288,7 @@ body[data-theme="c"] *{box-sizing:border-box;}
 
   body[data-theme="c"] .role-cat{font-weight:700; font-size:.87rem; margin:14px 0 6px; color:var(--ink);}
   body[data-theme="c"] ul.bullets{margin:0 0 4px; padding-left:20px;}
-  body[data-theme="c"] ul.bullets li{font-size:.89rem; color:#2b2e37; margin-bottom:6px;}
+  body[data-theme="c"] ul.bullets li{font-size:.89rem; color:var(--sub); margin-bottom:6px;}
   body[data-theme="c"] ul.bullets li::marker{color:var(--accent);}
   body[data-theme="c"] ul.bullets li b{color:var(--ink);}
 
@@ -386,7 +391,7 @@ body[data-theme="d"] *{box-sizing:border-box;}
 
   body[data-theme="d"] .role-cat{font-weight:700; font-size:.87rem; margin:14px 0 6px; color:var(--ink);}
   body[data-theme="d"] ul.bullets{margin:0 0 4px; padding-left:20px;}
-  body[data-theme="d"] ul.bullets li{font-size:.89rem; color:#2b2e37; margin-bottom:6px;}
+  body[data-theme="d"] ul.bullets li{font-size:.89rem; color:var(--sub); margin-bottom:6px;}
   body[data-theme="d"] ul.bullets li::marker{color:var(--accent);}
   body[data-theme="d"] ul.bullets li b{color:var(--ink);}
 
@@ -449,7 +454,7 @@ body[data-theme="d"] .job-date, body[data-theme="d"] .edu-date{ font-family:'Cas
 </script>
 
   <div class="toolbar">
-    <a class="home" href="../../index.html">&larr; Back to site</a>
+    <a class="home" href="../../index.html">&larr; Home</a>
     <div class="actions">
       <a class="btn" href="./tushar_supe_resume_2026.pdf" target="_blank">Download PDF</a>
       <a class="btn primary" href="#" onclick="window.print(); return false;">Print / Save as PDF</a>
@@ -564,6 +569,14 @@ body[data-theme="d"] .job-date, body[data-theme="d"] .edu-date{ font-family:'Cas
     </ul>
   </div>
 
-  <span class="corner-mark" aria-hidden="true" onclick="switchTheme()"></span>
+  <button class="theme-switch-btn" type="button" title="Switch theme" onclick="switchTheme()">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="13.5" cy="6.5" r="1.3" fill="currentColor" stroke="none"/>
+    <circle cx="17.5" cy="10.5" r="1.3" fill="currentColor" stroke="none"/>
+    <circle cx="8.5" cy="7.5" r="1.3" fill="currentColor" stroke="none"/>
+    <circle cx="6.5" cy="12.5" r="1.3" fill="currentColor" stroke="none"/>
+    <path d="M12 2a10 10 0 1 0 10 10c0-1-1-2-2.5-2h-3a2.5 2.5 0 0 1 0-5H18a2 2 0 0 0 2-2c0-1.8-3.6-3-8-3z"/>
+  </svg>
+</button>
 </body>
 </html>
