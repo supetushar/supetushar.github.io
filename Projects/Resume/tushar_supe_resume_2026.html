@@ -490,13 +490,12 @@ body[data-theme="d"] .job-date, body[data-theme="d"] .edu-date{ font-family:'Cas
 
       <div class="role-cat">Computer Vision and Applied AI</div>
       <ul class="bullets">
-        <li>Built an end-to-end virtual-studio car imaging pipeline: background removal, orientation and tilt correction, AI-generated shadow/reflection, license plate detection and anonymization, and studio-background placement, fusing <b>15+ production CV models</b> to output photorealistic images at 97&ndash;99.5% accuracy or IoU.</li>
+        <li>Built an end-to-end virtual-studio car imaging pipeline: background removal, orientation and tilt correction, AI-generated shadow/reflection, license plate detection and anonymization, studio-background placement, image harmonization, and inpainting, fusing <b>15+ production CV models</b> to output photorealistic images at 97&ndash;99.5% accuracy or IoU.</li>
         <li>Scaled the imaging pipeline into a high-throughput production system processing ~250K+ images per month with 8&times; burst capacity, while <b>cutting per-image processing time by 70%</b> and pipeline memory footprint by over 95% through threading, caching, and pipeline optimization.</li>
         <li>Extended the imaging pipeline to bus imagery and shipped a thin-part detection model, <b>raising detection accuracy from 60% to 85%</b> while cutting inference latency by ~4&times; and container size by ~15&times; through model and runtime optimization (ONNX export, image slicing, custom post-processing).</li>
-        <li><b>Reduced model training compute cost by 75%</b> through GPU tier optimization and custom training pipeline improvements, and cut distributed-GPU training time from ~3 months to under a week.</li>
+        <li><b>Reduced model training compute cost by 75%</b> through GPU tier optimization and custom training pipeline improvements, and cut distributed-GPU training time from ~3 months to under a week; optimized model inference to <b>halve model size and run ~1.55&times; faster</b>.</li>
         <li>Automated 3D synthetic-data generation (Blender, distributed multi-GPU rendering), <b>cutting a 450+ day rendering workload down to a week</b> and enabling continuous scaling of training data.</li>
         <li>Engineered an interactive 360-degree car spin generation pipeline from walkaround imagery, evaluating and applying multiple novel-view-synthesis and multi-view-geometry approaches spanning classical structure-from-motion, neural rendering, and video stabilization.</li>
-        <li>Evaluated and prototyped generative-model approaches for background inpainting, reflection removal, and image harmonization, training custom models for each.</li>
       </ul>
 
       <div class="role-cat">Backend, Cloud, and Platform Engineering</div>
@@ -507,13 +506,15 @@ body[data-theme="d"] .job-date, body[data-theme="d"] .edu-date{ font-family:'Cas
         <li>Implemented a GCP AI inference gateway across 30+ in-house inference endpoints with a Redis-based rate limiter and custom metrics-driven autoscaling, handling ~1,000 requests per 20-second window while optimizing for cost-efficiency over raw throughput to match real production load and minimize idle spend.</li>
         <li>Established MongoDB schemas, aggregation pipelines, and indexing strategy for a document database layer supporting multiple microservices, and built the asynchronous task queue infrastructure behind it, resolving recurring worker crashes, memory exhaustion, and message-duplication issues under production load.</li>
         <li>Owned end-to-end production incident response and database reliability at scale &ndash; including a multi-month retention cleanup that <b>reduced one major collection's size by a third</b> &ndash; across application, database, task queue, and third-party API layers as the platform's primary infrastructure engineer.</li>
+        <li>Shipped a production Model Context Protocol (MCP) server exposing 70+ tools to ChatGPT and Claude, testing and tuning it for tool-selection accuracy and data correctness.</li>
+        <li>Assumed frontend development responsibilities alongside backend and ML work, building image-editing tools for vehicle size and position adjustment, mask correction, and custom banner creation, integrated with backend APIs.</li>
       </ul>
 
       <div class="role-cat">Team Leadership and AI Product Delivery</div>
       <ul class="bullets">
         <li><b>Advanced from individual contributor to a technical lead role</b> at a sub-10-engineer startup: mentored four AI and backend engineers &ndash; while still independently shipping individual technical work end-to-end.</li>
         <li>Owned the AI and computer vision technical roadmap and technical hiring for AI engineering roles; handled technical support escalations for major enterprise accounts.</li>
-        <li>Guided a team through delivery of an automated social media content pipeline (AI avatar-video, script, and voice generation with multi-platform posting and comment-reply agents) and shipped internal analytics dashboards covering image quality, volume, failure rate, and team performance.</li>
+        <li>Guided a team through delivery of an automated social media content pipeline (AI avatar-video, script, and voice generation with multi-platform posting and comment-reply agents) and shipped internal analytics dashboards covering image quality, volume, failure rate, and team performance, optimizing dashboard queries for real-time data (<b>query time cut by over 99%</b>).</li>
         <li>Currently steering a team building an automated image quality-check and auto-correction system that flags issues via AI and routes unresolved cases to human review.</li>
       </ul>
     </div>
@@ -524,7 +525,6 @@ body[data-theme="d"] .job-date, body[data-theme="d"] .edu-date{ font-family:'Cas
         <div class="job-date">2019 &ndash; 2020</div>
       </div>
       <div class="job-org"><b>Reliance Industries Limited</b> &ndash; Hazira, Gujarat</div>
-      <p class="job-desc">Mechanical plant maintenance at a large-scale manufacturing facility.</p>
     </div>
 
     <h2 class="sec">Skills and Tools</h2>
@@ -532,7 +532,7 @@ body[data-theme="d"] .job-date, body[data-theme="d"] .edu-date{ font-family:'Cas
       <dt>Languages</dt><dd>Python, Bash/Shell, JavaScript</dd>
       <dt>ML &amp; Computer Vision</dt><dd>Deep learning model development and training, distributed multi-GPU training (PyTorch, AMP/FP16), computer vision (segmentation, detection, classification, matting), object detection (YOLO-family), generative modeling (GANs, diffusion models, CNNs), inference acceleration (ONNX), synthetic data generation, OpenCV, scikit-learn, 3D reconstruction and novel view synthesis (COLMAP, GLOMAP, Gaussian Splatting, NeRF/NeRFStudio), multi-view geometry and feature matching (SIFT, SuperPoint, SuperGlue)</dd>
       <dt>AI/LLM &amp; Agentic Systems</dt><dd>LLM APIs (Claude, OpenAI, Gemini), LangGraph, LangChain, Retrieval-Augmented Generation (RAG, Agentic RAG), multi-agent systems, tool calling, Model Context Protocol (MCP), AI avatar/voice/video generation pipelines</dd>
-      <dt>Cloud &amp; Infrastructure</dt><dd>AWS (EC2, S3, Lambda, SQS, CloudFront, SageMaker, Secrets Manager), GCP (Compute Engine, Cloud Run, Cloud Build, Cloud Tasks, Vertex AI), self-hosted GPU inference platforms, Docker, GitHub Actions, Nginx, Blender (bpy) for synthetic 3D data</dd>
+      <dt>Cloud &amp; Infrastructure</dt><dd>AWS (EC2, S3, Lambda, SQS, CloudFront, SageMaker, Secrets Manager), GCP (Compute Engine, Cloud Run, Cloud Build, Cloud Tasks, Vertex AI), Azure (Container Apps, Azure OpenAI), self-hosted GPU inference platforms, Docker, GitHub Actions, Nginx, Blender (bpy) for synthetic 3D data</dd>
       <dt>Databases &amp; Backend</dt><dd>MongoDB, MongoDB Atlas, PostgreSQL, pgvector, Redis, FastAPI, schema design and indexing, REST API development, asynchronous task queues (Celery), backend service architecture</dd>
       <dt>Automation &amp; Tooling</dt><dd>n8n, Playwright, webhooks, LangSmith</dd>
       <dt>Practices</dt><dd>Git version control, code review, technical hiring and team leadership, mentorship, cost optimization and infrastructure governance, production incident response, CI/CD</dd>
@@ -544,7 +544,7 @@ body[data-theme="d"] .job-date, body[data-theme="d"] .edu-date{ font-family:'Cas
         <div class="job-title">AI-Powered Job Application Agent</div>
         <div class="job-date">August 2026 &ndash; Present</div>
       </div>
-      <p class="job-desc">Agentic system automating the end-to-end job application workflow: searches jobs, parses job descriptions, matches them against a structured candidate profile, generates tailored application materials, and completes submission steps through browser automation. Building with LangGraph for agent orchestration, retrieval-augmented generation over candidate and job data, tool-calling and MCP integration, and a FastAPI/PostgreSQL backend with Playwright for browser automation.</p>
+      <p class="job-desc">Agentic system automating the end-to-end job application workflow: searches jobs, parses job descriptions, matches them against a structured candidate profile, generates tailored application materials, and completes submission steps through browser automation. Building with LangGraph, RAG, tool calling and MCP, FastAPI/PostgreSQL, and Playwright.</p>
     </div>
 
     <h2 class="sec">Education</h2>
